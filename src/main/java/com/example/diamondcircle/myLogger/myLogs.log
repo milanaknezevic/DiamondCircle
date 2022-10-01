@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T12:16:04.752052400Z</date>
+  <millis>1664540164752</millis>
+  <nanos>52400</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T12:16:17.082079600Z</date>
+  <millis>1664540177082</millis>
+  <nanos>79600</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T12:31:11.236223100Z</date>
+  <millis>1664541071236</millis>
+  <nanos>223100</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T12:39:11.961581100Z</date>
+  <millis>1664541551961</millis>
+  <nanos>581100</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T12:40:50.392254900Z</date>
+  <millis>1664541650392</millis>
+  <nanos>254900</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>25</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T12:43:08.742813600Z</date>
+  <millis>1664541788742</millis>
+  <nanos>813600</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T12:43:23.963597200Z</date>
+  <millis>1664541803963</millis>
+  <nanos>597200</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T12:44:03.415881500Z</date>
+  <millis>1664541843415</millis>
+  <nanos>881500</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>25</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T12:46:48.697317300Z</date>
+  <millis>1664542008697</millis>
+  <nanos>317300</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T12:46:54.806526600Z</date>
+  <millis>1664542014806</millis>
+  <nanos>526600</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T12:48:59.820744800Z</date>
+  <millis>1664542139820</millis>
+  <nanos>744800</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T13:47:31.280474700Z</date>
+  <millis>1664545651280</millis>
+  <nanos>474700</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T13:55:05.758724700Z</date>
+  <millis>1664546105758</millis>
+  <nanos>724700</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T13:55:50.404235300Z</date>
+  <millis>1664546150404</millis>
+  <nanos>235300</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T13:59:11.586641900Z</date>
+  <millis>1664546351586</millis>
+  <nanos>641900</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>30</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T13:59:44.915186700Z</date>
+  <millis>1664546384915</millis>
+  <nanos>186700</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T13:59:51.308464900Z</date>
+  <millis>1664546391308</millis>
+  <nanos>464900</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T13:59:52.314821400Z</date>
+  <millis>1664546392314</millis>
+  <nanos>821400</nanos>
+  <sequence>3</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T13:59:59.883963800Z</date>
+  <millis>1664546399883</millis>
+  <nanos>963800</nanos>
+  <sequence>4</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:00:01.892462500Z</date>
+  <millis>1664546401892</millis>
+  <nanos>462500</nanos>
+  <sequence>5</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:00:16.057254500Z</date>
+  <millis>1664546416057</millis>
+  <nanos>254500</nanos>
+  <sequence>6</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:00:21.185333Z</date>
+  <millis>1664546421185</millis>
+  <nanos>333000</nanos>
+  <sequence>7</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:00:23.193938500Z</date>
+  <millis>1664546423193</millis>
+  <nanos>938500</nanos>
+  <sequence>8</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:00:25.201358800Z</date>
+  <millis>1664546425201</millis>
+  <nanos>358800</nanos>
+  <sequence>9</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:00:31.332925900Z</date>
+  <millis>1664546431332</millis>
+  <nanos>925900</nanos>
+  <sequence>10</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:00:35.460583Z</date>
+  <millis>1664546435460</millis>
+  <nanos>583000</nanos>
+  <sequence>11</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>27</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T14:05:46.060523600Z</date>
+  <millis>1664546746060</millis>
+  <nanos>523600</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:06:12.039841500Z</date>
+  <millis>1664546772039</millis>
+  <nanos>841500</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:07:55.616296200Z</date>
+  <millis>1664546875616</millis>
+  <nanos>296200</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T14:14:25.250150500Z</date>
+  <millis>1664547265250</millis>
+  <nanos>150500</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T14:17:20.806982400Z</date>
+  <millis>1664547440806</millis>
+  <nanos>982400</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:17:29.030157Z</date>
+  <millis>1664547449030</millis>
+  <nanos>157000</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:17:34.529049Z</date>
+  <millis>1664547454529</millis>
+  <nanos>49000</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T14:24:44.615613200Z</date>
+  <millis>1664547884615</millis>
+  <nanos>613200</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T14:25:20.787922900Z</date>
+  <millis>1664547920787</millis>
+  <nanos>922900</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T16:59:48.762050700Z</date>
+  <millis>1664557188762</millis>
+  <nanos>50700</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>25</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T17:17:00.628362100Z</date>
+  <millis>1664558220628</millis>
+  <nanos>362100</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T17:32:11.207661300Z</date>
+  <millis>1664559131207</millis>
+  <nanos>661300</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>25</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.392816400Z</date>
+  <millis>1664559136392</millis>
+  <nanos>816400</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.404963600Z</date>
+  <millis>1664559136404</millis>
+  <nanos>963600</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.418100800Z</date>
+  <millis>1664559136418</millis>
+  <nanos>100800</nanos>
+  <sequence>3</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.431884500Z</date>
+  <millis>1664559136431</millis>
+  <nanos>884500</nanos>
+  <sequence>4</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.445847800Z</date>
+  <millis>1664559136445</millis>
+  <nanos>847800</nanos>
+  <sequence>5</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.460856500Z</date>
+  <millis>1664559136460</millis>
+  <nanos>856500</nanos>
+  <sequence>6</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.473777100Z</date>
+  <millis>1664559136473</millis>
+  <nanos>777100</nanos>
+  <sequence>7</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.486743800Z</date>
+  <millis>1664559136486</millis>
+  <nanos>743800</nanos>
+  <sequence>8</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.499700200Z</date>
+  <millis>1664559136499</millis>
+  <nanos>700200</nanos>
+  <sequence>9</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.512712Z</date>
+  <millis>1664559136512</millis>
+  <nanos>712000</nanos>
+  <sequence>10</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.525676300Z</date>
+  <millis>1664559136525</millis>
+  <nanos>676300</nanos>
+  <sequence>11</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.538892Z</date>
+  <millis>1664559136538</millis>
+  <nanos>892000</nanos>
+  <sequence>12</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.551044300Z</date>
+  <millis>1664559136551</millis>
+  <nanos>44300</nanos>
+  <sequence>13</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.564129900Z</date>
+  <millis>1664559136564</millis>
+  <nanos>129900</nanos>
+  <sequence>14</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.576913600Z</date>
+  <millis>1664559136576</millis>
+  <nanos>913600</nanos>
+  <sequence>15</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.589108400Z</date>
+  <millis>1664559136589</millis>
+  <nanos>108400</nanos>
+  <sequence>16</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.601919300Z</date>
+  <millis>1664559136601</millis>
+  <nanos>919300</nanos>
+  <sequence>17</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.613945400Z</date>
+  <millis>1664559136613</millis>
+  <nanos>945400</nanos>
+  <sequence>18</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.626952300Z</date>
+  <millis>1664559136626</millis>
+  <nanos>952300</nanos>
+  <sequence>19</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.640168200Z</date>
+  <millis>1664559136640</millis>
+  <nanos>168200</nanos>
+  <sequence>20</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.653355Z</date>
+  <millis>1664559136653</millis>
+  <nanos>355000</nanos>
+  <sequence>21</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.665839800Z</date>
+  <millis>1664559136665</millis>
+  <nanos>839800</nanos>
+  <sequence>22</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.678804500Z</date>
+  <millis>1664559136678</millis>
+  <nanos>804500</nanos>
+  <sequence>23</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.690775300Z</date>
+  <millis>1664559136690</millis>
+  <nanos>775300</nanos>
+  <sequence>24</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:16.706027500Z</date>
+  <millis>1664559136706</millis>
+  <nanos>27500</nanos>
+  <sequence>25</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.550128300Z</date>
+  <millis>1664559142550</millis>
+  <nanos>128300</nanos>
+  <sequence>26</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.564571500Z</date>
+  <millis>1664559142564</millis>
+  <nanos>571500</nanos>
+  <sequence>27</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.580656700Z</date>
+  <millis>1664559142580</millis>
+  <nanos>656700</nanos>
+  <sequence>28</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.596134300Z</date>
+  <millis>1664559142596</millis>
+  <nanos>134300</nanos>
+  <sequence>29</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.612347600Z</date>
+  <millis>1664559142612</millis>
+  <nanos>347600</nanos>
+  <sequence>30</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.627947Z</date>
+  <millis>1664559142627</millis>
+  <nanos>947000</nanos>
+  <sequence>31</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.643445500Z</date>
+  <millis>1664559142643</millis>
+  <nanos>445500</nanos>
+  <sequence>32</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.658524300Z</date>
+  <millis>1664559142658</millis>
+  <nanos>524300</nanos>
+  <sequence>33</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.674578Z</date>
+  <millis>1664559142674</millis>
+  <nanos>578000</nanos>
+  <sequence>34</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.689581Z</date>
+  <millis>1664559142689</millis>
+  <nanos>581000</nanos>
+  <sequence>35</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.704790500Z</date>
+  <millis>1664559142704</millis>
+  <nanos>790500</nanos>
+  <sequence>36</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.720621700Z</date>
+  <millis>1664559142720</millis>
+  <nanos>621700</nanos>
+  <sequence>37</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.736126300Z</date>
+  <millis>1664559142736</millis>
+  <nanos>126300</nanos>
+  <sequence>38</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.750851900Z</date>
+  <millis>1664559142750</millis>
+  <nanos>851900</nanos>
+  <sequence>39</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.765773300Z</date>
+  <millis>1664559142765</millis>
+  <nanos>773300</nanos>
+  <sequence>40</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.781929Z</date>
+  <millis>1664559142781</millis>
+  <nanos>929000</nanos>
+  <sequence>41</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.797047900Z</date>
+  <millis>1664559142797</millis>
+  <nanos>47900</nanos>
+  <sequence>42</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.812515600Z</date>
+  <millis>1664559142812</millis>
+  <nanos>515600</nanos>
+  <sequence>43</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.827718900Z</date>
+  <millis>1664559142827</millis>
+  <nanos>718900</nanos>
+  <sequence>44</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.843090300Z</date>
+  <millis>1664559142843</millis>
+  <nanos>90300</nanos>
+  <sequence>45</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.858508600Z</date>
+  <millis>1664559142858</millis>
+  <nanos>508600</nanos>
+  <sequence>46</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.873820100Z</date>
+  <millis>1664559142873</millis>
+  <nanos>820100</nanos>
+  <sequence>47</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.889434300Z</date>
+  <millis>1664559142889</millis>
+  <nanos>434300</nanos>
+  <sequence>48</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.904810600Z</date>
+  <millis>1664559142904</millis>
+  <nanos>810600</nanos>
+  <sequence>49</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:22.920487900Z</date>
+  <millis>1664559142920</millis>
+  <nanos>487900</nanos>
+  <sequence>50</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:24.690188700Z</date>
+  <millis>1664559144690</millis>
+  <nanos>188700</nanos>
+  <sequence>51</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>25</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:27.948606500Z</date>
+  <millis>1664559147948</millis>
+  <nanos>606500</nanos>
+  <sequence>52</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:27.964495700Z</date>
+  <millis>1664559147964</millis>
+  <nanos>495700</nanos>
+  <sequence>53</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:27.979635Z</date>
+  <millis>1664559147979</millis>
+  <nanos>635000</nanos>
+  <sequence>54</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:27.995750800Z</date>
+  <millis>1664559147995</millis>
+  <nanos>750800</nanos>
+  <sequence>55</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.011762700Z</date>
+  <millis>1664559148011</millis>
+  <nanos>762700</nanos>
+  <sequence>56</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.028076100Z</date>
+  <millis>1664559148028</millis>
+  <nanos>76100</nanos>
+  <sequence>57</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.042894500Z</date>
+  <millis>1664559148042</millis>
+  <nanos>894500</nanos>
+  <sequence>58</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.058228400Z</date>
+  <millis>1664559148058</millis>
+  <nanos>228400</nanos>
+  <sequence>59</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.074254Z</date>
+  <millis>1664559148074</millis>
+  <nanos>254000</nanos>
+  <sequence>60</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.090523400Z</date>
+  <millis>1664559148090</millis>
+  <nanos>523400</nanos>
+  <sequence>61</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.105622600Z</date>
+  <millis>1664559148105</millis>
+  <nanos>622600</nanos>
+  <sequence>62</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.121308800Z</date>
+  <millis>1664559148121</millis>
+  <nanos>308800</nanos>
+  <sequence>63</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.137003Z</date>
+  <millis>1664559148137</millis>
+  <nanos>3000</nanos>
+  <sequence>64</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.152588200Z</date>
+  <millis>1664559148152</millis>
+  <nanos>588200</nanos>
+  <sequence>65</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.168156Z</date>
+  <millis>1664559148168</millis>
+  <nanos>156000</nanos>
+  <sequence>66</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.183146Z</date>
+  <millis>1664559148183</millis>
+  <nanos>146000</nanos>
+  <sequence>67</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.198632100Z</date>
+  <millis>1664559148198</millis>
+  <nanos>632100</nanos>
+  <sequence>68</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.214160300Z</date>
+  <millis>1664559148214</millis>
+  <nanos>160300</nanos>
+  <sequence>69</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.229246500Z</date>
+  <millis>1664559148229</millis>
+  <nanos>246500</nanos>
+  <sequence>70</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.245117400Z</date>
+  <millis>1664559148245</millis>
+  <nanos>117400</nanos>
+  <sequence>71</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.260644900Z</date>
+  <millis>1664559148260</millis>
+  <nanos>644900</nanos>
+  <sequence>72</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.276754200Z</date>
+  <millis>1664559148276</millis>
+  <nanos>754200</nanos>
+  <sequence>73</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.291834900Z</date>
+  <millis>1664559148291</millis>
+  <nanos>834900</nanos>
+  <sequence>74</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.307206Z</date>
+  <millis>1664559148307</millis>
+  <nanos>206000</nanos>
+  <sequence>75</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+<record>
+  <date>2022-09-30T17:32:28.322848300Z</date>
+  <millis>1664559148322</millis>
+  <nanos>848300</nanos>
+  <sequence>76</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.lang.NullPointerException: Input stream must not be null</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T17:44:08.925435900Z</date>
+  <millis>1664559848925</millis>
+  <nanos>435900</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-09-30T17:44:49.481646900Z</date>
+  <millis>1664559889481</millis>
+  <nanos>646900</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-30T17:48:50.686910200Z</date>
+  <millis>1664560130686</millis>
+  <nanos>910200</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T08:22:28.724528200Z</date>
+  <millis>1664612548724</millis>
+  <nanos>528200</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T08:23:15.190392700Z</date>
+  <millis>1664612595190</millis>
+  <nanos>392700</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T08:54:06.951139400Z</date>
+  <millis>1664614446951</millis>
+  <nanos>139400</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T08:56:25.309618400Z</date>
+  <millis>1664614585309</millis>
+  <nanos>618400</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T09:00:47.049481300Z</date>
+  <millis>1664614847049</millis>
+  <nanos>481300</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:00:47.129261300Z</date>
+  <millis>1664614847129</millis>
+  <nanos>261300</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:00:47.131257500Z</date>
+  <millis>1664614847131</millis>
+  <nanos>257500</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:00:56.057603400Z</date>
+  <millis>1664614856057</millis>
+  <nanos>603400</nanos>
+  <sequence>3</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:01.063291400Z</date>
+  <millis>1664614861063</millis>
+  <nanos>291400</nanos>
+  <sequence>4</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:06.313005500Z</date>
+  <millis>1664614866313</millis>
+  <nanos>5500</nanos>
+  <sequence>5</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:13.430815300Z</date>
+  <millis>1664614873430</millis>
+  <nanos>815300</nanos>
+  <sequence>6</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:13.432392900Z</date>
+  <millis>1664614873432</millis>
+  <nanos>392900</nanos>
+  <sequence>7</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:13.433387500Z</date>
+  <millis>1664614873433</millis>
+  <nanos>387500</nanos>
+  <sequence>8</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:18.436231800Z</date>
+  <millis>1664614878436</millis>
+  <nanos>231800</nanos>
+  <sequence>9</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:32.880431200Z</date>
+  <millis>1664614892880</millis>
+  <nanos>431200</nanos>
+  <sequence>10</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:32.883433900Z</date>
+  <millis>1664614892883</millis>
+  <nanos>433900</nanos>
+  <sequence>11</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:43.104790Z</date>
+  <millis>1664614903104</millis>
+  <nanos>790000</nanos>
+  <sequence>12</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:43.107651900Z</date>
+  <millis>1664614903107</millis>
+  <nanos>651900</nanos>
+  <sequence>13</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:01:48.112192500Z</date>
+  <millis>1664614908112</millis>
+  <nanos>192500</nanos>
+  <sequence>14</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:02:11.132161100Z</date>
+  <millis>1664614931132</millis>
+  <nanos>161100</nanos>
+  <sequence>15</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:02:11.137145800Z</date>
+  <millis>1664614931137</millis>
+  <nanos>145800</nanos>
+  <sequence>16</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:02:22.355666600Z</date>
+  <millis>1664614942355</millis>
+  <nanos>666600</nanos>
+  <sequence>17</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:02:32.361058900Z</date>
+  <millis>1664614952361</millis>
+  <nanos>58900</nanos>
+  <sequence>18</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T09:16:23.707589200Z</date>
+  <millis>1664615783707</millis>
+  <nanos>589200</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:16:35.934439200Z</date>
+  <millis>1664615795934</millis>
+  <nanos>439200</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:16:49.266483300Z</date>
+  <millis>1664615809266</millis>
+  <nanos>483300</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T09:16:54.662113500Z</date>
+  <millis>1664615814662</millis>
+  <nanos>113500</nanos>
+  <sequence>3</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
