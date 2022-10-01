@@ -162,14 +162,13 @@ public class GameService {
                  synchronized (MainController.lock)
                     {*/
                         trenutnaKarta=pomKarta.remove(0);
-                        System.out.println("Izvukao kartuuuuuuu");
                         mainController.prikaziKartu(trenutnaKarta);
                         if(trenutnaKarta instanceof ObicnaKarta)
                         {
                             trenutniIgrac = pomIgraci.remove(0);
                             System.out.println("trenutni igrac " + trenutniIgrac.getIme());
-                            for (Igrac i: pomIgraci)
-                                System.out.println("svi igraci " +  i.getIme());
+//                            for (Igrac i: pomIgraci)
+//                                System.out.println("svi igraci " +  i.getIme());
                             pomjeraj=((ObicnaKarta) trenutnaKarta).getPomjeraj();
                             trenutniIgrac.setBrojPomjerajaFigure(pomjeraj);
                             trenutniIgrac.play();
@@ -195,15 +194,9 @@ public class GameService {
                             ((SpecijalnaKarta) trenutnaKarta).postaviRupe();
                         }
                         pomKarta.add(trenutnaKarta);
-                    //provjeriKraj();
-                   // }
         }
         upisiUFajl();
-        //mainController.setBrojOdigranihIgara(mainController.brojIgara);
-
-
-
-    }
+}
 
     public void provjeriKraj()
     {
@@ -247,25 +240,6 @@ public class GameService {
                     predjenaPolja+=figura.getPredjenaPolja().get(k).getElement().getX() + "-";
                     }
                     String string=removeLastChar(predjenaPolja);
-
-
-
-                    /*
-                    if (figura instanceof LebdecaFigura) {
-                        String stiglaDoCIlja = figura.isFiguraPreslaCijeluPutanju() ? "da" : "ne";
-                        pw.println("\t"+ figura.getIme() + " (Lebdeca figura, " + figura.getBoja() + ") - predjeni put (" + string
-                                + ") - stigla do cilja (" + stiglaDoCIlja + ")");
-                    } else if (figura instanceof ObicnaFigura) {
-                        String stiglaDoCIlja = figura.isFiguraPreslaCijeluPutanju() ? "da" : "ne";
-                        pw.println("\t"+ figura.getIme() + " (Obicna figura, " + figura.getBoja() + ") - predjeni put (" + string
-                                + ") - stigla do cilja (" + stiglaDoCIlja + ")");
-                    } else {
-                        String stiglaDoCIlja = figura.isFiguraPreslaCijeluPutanju() ? "da" : "ne";
-                        pw.println("\t"+ figura.getIme() + " (Super brza figura, " + figura.getBoja() + ") - predjeni put (" + string
-                                + ") - stigla do cilja (" + stiglaDoCIlja + ")");
-                    }
-
-                     */
                     String stiglaDoCIlja = figura.isFiguraPreslaCijeluPutanju() ? "da" : "ne";
                     pw.println("\t"+ figura.getIme() + " ("+figura.getClass().getSimpleName() +"," + figura.getBoja() + ") - predjeni put (" + string
                             + ") - stigla do cilja (" + stiglaDoCIlja + ")");

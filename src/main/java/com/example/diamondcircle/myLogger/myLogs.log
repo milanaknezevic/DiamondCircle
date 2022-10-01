@@ -1978,3 +1978,171 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T13:16:35.734385500Z</date>
+  <millis>1664630195734</millis>
+  <nanos>385500</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T13:16:49.053161700Z</date>
+  <millis>1664630209053</millis>
+  <nanos>161700</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T13:17:48.939930400Z</date>
+  <millis>1664630268939</millis>
+  <nanos>930400</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T13:18:04.018253600Z</date>
+  <millis>1664630284018</millis>
+  <nanos>253600</nanos>
+  <sequence>3</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T13:18:13.132408400Z</date>
+  <millis>1664630293132</millis>
+  <nanos>408400</nanos>
+  <sequence>4</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T13:19:33.609937900Z</date>
+  <millis>1664630373609</millis>
+  <nanos>937900</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T13:24:29.100039200Z</date>
+  <millis>1664630669100</millis>
+  <nanos>39200</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T13:28:58.887286900Z</date>
+  <millis>1664630938887</millis>
+  <nanos>286900</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T13:29:10.550978200Z</date>
+  <millis>1664630950550</millis>
+  <nanos>978200</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-01T13:31:05.762284600Z</date>
+  <millis>1664631065762</millis>
+  <nanos>284600</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T13:31:14.978415Z</date>
+  <millis>1664631074978</millis>
+  <nanos>415000</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-10-01T13:31:39.073669600Z</date>
+  <millis>1664631099073</millis>
+  <nanos>669600</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>

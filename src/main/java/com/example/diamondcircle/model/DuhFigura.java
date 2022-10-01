@@ -48,10 +48,10 @@ public class DuhFigura extends Thread{
                         }
                     }
                 }
-                synchronized (MainController.lock)
-                {
+               // synchronized (MainController.lock)
+                //{
                 Polje x = putanjaFigure.get(rand.nextInt(putanjaFigure.size()));
-                if (!x.isImaBonus() && !x.isImaRupa())//ako vec nema bonus ili ako nije rupa stavi bonus
+                if (!x.isImaBonus() && !x.isImaRupa() && !x.equals(putanjaFigure.get(putanjaFigure.size()-1)))//ako vec nema bonus ili ako nije rupa stavi bonus
                 {
                     x.setImaBonus(true);
                     //putanjaFigure.get(putanjaFigure.indexOf(x)).setImaFigura(true);
@@ -61,9 +61,9 @@ public class DuhFigura extends Thread{
                     i++;
                 }
                 else{
+                    System.out.printf("");
 
-
-                }}
+                }//}
 
             }
             try {

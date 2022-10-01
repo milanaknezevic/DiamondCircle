@@ -196,6 +196,7 @@ public class MainController implements Initializable {
             }).start();
             new Thread(() -> {
                 mjerenjeVremena();
+               // measureGameDuration();
             }).start();
             new Thread(() ->
             {
@@ -232,163 +233,7 @@ public class MainController implements Initializable {
 
 
     }
-   /* @FXML
-    public void postaviFiguruNaPolje(Polje polje,Figura figura)
-    {
 
-        Rectangle rectangle = new Rectangle(row1, col1);
-        Label label = new Label();
-        if (figura.getBoja().equals(Boja.CRVENA)) {
-            rectangle.setFill(Color.RED);
-            if (figura instanceof ObicnaFigura) {
-                label.setText("OF");
-            } else if (figura instanceof SuperBrzaFigura) {
-                label.setText("SF");
-            } else {
-                label.setText("LF");
-            }
-        } else if (figura.getBoja().equals(Boja.ZELENA)) {
-            rectangle.setFill(Color.GREEN);
-            if (figura instanceof ObicnaFigura) {
-                label.setText("OF");
-            } else if (figura instanceof SuperBrzaFigura) {
-                label.setText("SF");
-
-            } else {
-                label.setText("LF");
-            }
-        } else if (figura.getBoja().equals(Boja.PLAVA)) {
-            rectangle.setFill(Color.BLUE);
-            if (figura instanceof ObicnaFigura) {
-                label.setText("OF");
-            } else if (figura instanceof SuperBrzaFigura) {
-                label.setText("SF");
-            } else {
-                label.setText("LF");
-            }
-        } else {
-            rectangle.setFill(Color.YELLOW);
-            if (figura instanceof ObicnaFigura) {
-                label.setText("OF");
-            } else if (figura instanceof SuperBrzaFigura) {
-                label.setText("SF");
-            } else {
-                label.setText("LF");
-            }
-        }
-        int x = getX(polje);
-        int y = getY(polje);
-        // System.out.println("x= " + x + " y=" + y);
-        Platform.runLater(() ->
-        {
-            matrica.add(rectangle, y, x);
-            matrica.add(label, y, x);
-        });
-
-    }*/
-   /* @FXML
-    public void skloniFiguru(Polje p)
-    {
-        try {
-
-            int x=getX(p);
-            int y=getY(p);
-            Node currentNode = null;
-            Node currentNode1 = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Rectangle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
-                } else if (node instanceof Label && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode1 = node;
-                }
-            }
-            synchronized (lock) {
-                Node finalCurrentNode = currentNode;
-                Node finalCurrentNode1 = currentNode1;
-                if (finalCurrentNode != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-                }
-                if (finalCurrentNode1 != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode1));
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            log(e);
-        }
-    }
-
-    public void skloniDiamond(Polje polje)
-    {
-
-        try {
-            int x = getX(polje);
-            int y = getY(polje);
-            Node currentNode = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Circle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
-                }
-            }
-
-
-            Node finalCurrentNode = currentNode;
-            if (finalCurrentNode != null) {
-                Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-            }
-        }
- catch (Exception e)
-            {
-                log(e);
-            }
-
-    }
-
-    public void postaviCrneRupe(Polje polje)
-    {
-
-       // synchronized (lock) {
-            int x = getX(polje);
-            int y = getY(polje);
-            Rectangle rect = new Rectangle(row1, col1);
-            rect.setStyle("-fx-fill: black; -fx-stroke: gray; -fx-stroke-width: 1;");
-            Platform.runLater(() ->
-            {
-                matrica.add(rect, y, x);
-
-            });
-        //}
-
-    }
-    public void skloniCrneRupe(Polje p)
-    {
-        try {
-        int x=getX(p);
-        int y=getY(p);
-        Node currentNode = null;
-        ObservableList<Node> childrens = matrica.getChildren();
-        for (Node node : childrens) {
-            if (node instanceof Rectangle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) ==y) {
-                currentNode = node;
-            }
-        }
-        synchronized (lock) {
-            Node finalCurrentNode = currentNode;
-            if (finalCurrentNode != null) {
-                Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-            }
-        }   }
-        catch (Exception e)
-        {
-            log(e);
-        }
-
-    }
-
-  */
    public void prikaziKartu(Karta karta)
    {
 
@@ -397,37 +242,7 @@ public class MainController implements Initializable {
        Platform.runLater(() -> TreutnaKarta.setImage(image));
 
    }
-   /*public void skloniDiamond(Polje p1)
-   {
-       try {
-           int x=getX(p1);
-           int y=getY(p1);
-           Node currentNode = null;
-           ObservableList<Node> childrens = matrica.getChildren();
-           for (Node node : childrens) {
-               if (node instanceof Circle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                   currentNode = node;
-               }
-           }
-           synchronized (lock) {
-               Node finalCurrentNode = currentNode;
-               if (finalCurrentNode != null) {
-                   Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-               }
-           }
-       }
-       catch (Exception e)
-       {
-           log(e);
-       }
-   }*/
 
-   /*public void postaviDiamond(Polje p1)
-   {int x=getX(p1);
-       int y=getY(p1);
-       Circle circle=new Circle(10,Color.DEEPPINK);
-       Platform.runLater(()->matrica.add(circle,y,x));
-   }*/
 //ovo je pravi kod za diamond
     public void postaviDiamond(Polje p1)
     {int x=getX(p1);
@@ -614,7 +429,6 @@ public class MainController implements Initializable {
     public void skloniFiguru(Polje p)
     {
         try {
-
             int x=getX(p);
             int y=getY(p);
             Node currentNode = null;
@@ -643,37 +457,6 @@ public class MainController implements Initializable {
             log(e);
         }
     }
-   /* public void skloniFiguru(Polje p)
-    {
-        try {
-            int x=getX(p);
-            int y=getY(p);
-            Node currentNode = null;
-            Node currentNode1 = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Rectangle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
-                } else if (node instanceof Label && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode1 = node;
-                }
-            }
-            synchronized (lock) {
-                Node finalCurrentNode = currentNode;
-                Node finalCurrentNode1 = currentNode1;
-                if (finalCurrentNode != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-                }
-                if (finalCurrentNode1 != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode1));
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            log(e);
-        }
-    }*/
 
     public int getX(Polje p)
     {
@@ -716,16 +499,10 @@ public class MainController implements Initializable {
     }
     public void nacrtajMatricu()
     {
-
-        game_service = new GameService();
-        //game_service = GameService.getInstance();
+        game_service = new GameService();//game_service = GameService.getInstance();
         mainController = this;
         setDimension();
         int vel = dimenzija * dimenzija;
-        /*game_service.igra();*/
-
-
-        //matrica=new Polje[vel];
 
         for (int i = 0; i < dimenzija; i++) {
             ColumnConstraints col = new ColumnConstraints();
@@ -754,14 +531,13 @@ public class MainController implements Initializable {
     }
     public void mjerenjeVremena()
     {
-
         int broj=0;
         while(!krajIgre)
         {
             if(!pauza) {
                 game_service.trajanjeIgre=broj;
-                String time1 = broj + " [s]";
-                Platform.runLater(() -> LabelaZaVrijemeTrajanjaIgre.setText("Vrijeme trajanja igre: " + time1));
+                String vrijeme = broj + " [s]";
+                Platform.runLater(() -> LabelaZaVrijemeTrajanjaIgre.setText("Vrijeme trajanja igre: " + vrijeme));
                 try {
                     Thread.sleep(1000);
                 } catch (Exception e) {
@@ -776,6 +552,37 @@ public class MainController implements Initializable {
         }
 
     }
+
+
+   /* public void measureGameDuration() {
+     //   return new Thread(() -> {
+            int h = 0, m = 0, s = 0;
+            while (!krajIgre) {
+                if (!pauza) {
+                    String time = String.format("%d h %d m %d s", h, m, s);
+                   // gameService.setElapsedTime(time);
+                    Platform.runLater(() -> LabelaZaVrijemeTrajanjaIgre.setText(time));
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                        log(e);
+                    }
+                    s++;
+                    if (s >= 60) {
+                        m++;
+                        s %= 60;
+                    }
+                    if (m >= 60) {
+                        h++;
+                        m %= 60;
+                    }
+                }
+            }
+            System.out.printf("Game OVER Total time: %d h %d m %d s%n", h, m, s);
+            //gameService.setElapsedTime(String.format("%d h %d m %d s", h, m, s));
+        }
+*/
 
     public void setBrojOdigranihIgara(Label brojIgaraLabel) {
 
@@ -843,7 +650,7 @@ public class MainController implements Initializable {
     }
 
 
-    public void showFileContent(MouseEvent mouseEvent) {
+  /*  public void showFileContent(MouseEvent mouseEvent) {
         StringBuilder resultStringBuilder = new StringBuilder();
         String name=fileList.getSelectionModel().getSelectedItem();
         File file = new File("src"+File.separator+"main"+File.separator+"java"+File.separator+
@@ -858,7 +665,7 @@ public class MainController implements Initializable {
             log(e);
         }
 
-    }
+    }*/
 
 
     public void prikaziKretanjeIzabraneFigure(MouseEvent mouseEvent) {
