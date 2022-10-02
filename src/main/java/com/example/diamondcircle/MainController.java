@@ -23,7 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -37,56 +37,59 @@ import static com.example.diamondcircle.KretanjeFigure.kretanjeFigure;
 import static com.example.diamondcircle.Main.log;
 import static com.example.diamondcircle.model.GameService.*;
 import static java.lang.Thread.sleep;
+
 public class MainController implements Initializable {
     //public static GameService game_service = new GameService();
-    private Stage stage=new Stage();
+    private Stage stage = new Stage();
     private Scene scene;
     Figura pom = null;
-    private static int brojac=0;
-    public static Object lock=new Object();
+    private static int brojac = 0;
+    public static Object lock = new Object();
     private Parent root;
 
     public static MainController mainController;
 
     public static int row1;
     public static int col1;
-    private static int matricaNacrtana=0;
-    public static  GameService game_service;
-    public static StringBuilder builder= new StringBuilder();
+    private int a1 = 10;//za obim rupe/bonusa
+    private int a2 = 10;
+    private static int matricaNacrtana = 0;
+    public static GameService game_service;
+    public static StringBuilder builder = new StringBuilder();
     @FXML
-    public Label brojIgara=new Label();
+    public Label brojIgara = new Label();
     @FXML
-    public Label LabelaZaVrijemeTrajanjaIgre=new Label();
+    public Label LabelaZaVrijemeTrajanjaIgre = new Label();
     @FXML
-    public ListView<String> listaFiguraIgraca=new ListView<>();
+    public ListView<String> listaFiguraIgraca = new ListView<>();
 
     @FXML
-    public GridPane igraciNabrojani=new GridPane();
+    public GridPane igraciNabrojani = new GridPane();
     @FXML
-    public TextArea opisIgre= new TextArea();
+    public TextArea opisIgre = new TextArea();
     @FXML
-    public javafx.scene.control.TextArea content=new TextArea();
+    public javafx.scene.control.TextArea content = new TextArea();
     @FXML
-    public ListView<String> fileList=new ListView<>();
+    public ListView<String> fileList = new ListView<>();
     @FXML
     public javafx.scene.control.Button start;
     @FXML
     public Button pause;
-    public int pomoc=0;
+    public int pomoc = 0;
 
     String nazivFigureZaPrikazKretanja;
     @FXML
-    public javafx.scene.image.ImageView TreutnaKarta=new ImageView();
+    public javafx.scene.image.ImageView TreutnaKarta = new ImageView();
     @FXML
-    public  GridPane matrica=new GridPane();
+    public GridPane matrica = new GridPane();
     @FXML
-    private ChoiceBox<Integer> choiceBox1=new ChoiceBox<>();
+    private ChoiceBox<Integer> choiceBox1 = new ChoiceBox<>();
     @FXML
-    private ChoiceBox<Integer> choiceBox2=new ChoiceBox<>();
+    private ChoiceBox<Integer> choiceBox2 = new ChoiceBox<>();
     ObservableList<Integer> dimenzijeMatriceList = FXCollections
             .observableArrayList(7, 8, 9, 10);
     ObservableList<Integer> brojIgracaList = FXCollections
-            .observableArrayList(2,3,4);
+            .observableArrayList(2, 3, 4);
 
     @FXML
     private void inicijalizujChoiceBox() {
@@ -100,8 +103,8 @@ public class MainController implements Initializable {
 
     public void showFiles() {
 
-        File[] files = new File("src"+File.separator+"main"+File.separator+"java"+File.separator+
-                "com"+File.separator+"example"+File.separator+"diamondcircle"+File.separator+"results").listFiles();
+        File[] files = new File("src" + File.separator + "main" + File.separator + "java" + File.separator +
+                "com" + File.separator + "example" + File.separator + "diamondcircle" + File.separator + "results").listFiles();
         fileList.getItems().addAll(Arrays.stream(files).map(File::getName).collect(Collectors.toList()));
     }
 
@@ -109,17 +112,14 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         setBrojOdigranihIgara(brojIgara);
-        if(matricaNacrtana == 0)
-        {
+        if (matricaNacrtana == 0) {
             nacrtajMatricu();
             matricaNacrtana++;
         }
         setIgrace();
-        List<String> figureIgracaList=new ArrayList<>();
-        for(int j=0;j<brojIgraca;j++)
-        {
-            for(int k=0;k<getIgraci().get(0).getFigureIgraca().size();k++)
-            {
+        List<String> figureIgracaList = new ArrayList<>();
+        for (int j = 0; j < brojIgraca; j++) {
+            for (int k = 0; k < getIgraci().get(0).getFigureIgraca().size(); k++) {
                 System.out.println(getIgraci().get(j).getFigureIgraca().get(k).getIme());
                 figureIgracaList.add(getIgraci().get(j).getFigureIgraca().get(k).getIme());
             }
@@ -138,49 +138,42 @@ public class MainController implements Initializable {
 
     }
 
-    public void setIgrace()
-    {
+    public void setIgrace() {
 
-        for(int j=0;j<brojIgraca;j++)
-        {
-            int boja=getIgraci().get(j).getBojaIgraca();
-            if(boja ==0)//crvena
+        for (int j = 0; j < brojIgraca; j++) {
+            int boja = getIgraci().get(j).getBojaIgraca();
+            if (boja == 0)//crvena
             {
-                Label label=new Label(getIgraci().get(j).getIme()+ "    ");
+                Label label = new Label(getIgraci().get(j).getIme() + "    ");
                 label.setTextFill(Color.RED);
                 label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label,j,0);
-            } else if(boja ==1)//zelena
+                igraciNabrojani.add(label, j, 0);
+            } else if (boja == 1)//zelena
             {
-                Label label=new Label(getIgraci().get(j).getIme()+ "    ");
+                Label label = new Label(getIgraci().get(j).getIme() + "    ");
                 label.setTextFill(Color.GREEN);
                 label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label,j,0);
-            }
-            else if(boja ==2)//plava
+                igraciNabrojani.add(label, j, 0);
+            } else if (boja == 2)//plava
             {
-                Label label=new Label(getIgraci().get(j).getIme()+ "    ");
+                Label label = new Label(getIgraci().get(j).getIme() + "    ");
                 label.setTextFill(Color.BLUE);
                 label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label,j,0);
+                igraciNabrojani.add(label, j, 0);
             } else//zuta
             {
-                Label label=new Label(getIgraci().get(j).getIme()+ "    ");
+                Label label = new Label(getIgraci().get(j).getIme() + "    ");
                 label.setTextFill(Color.YELLOW);
                 label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label,j,0);
+                igraciNabrojani.add(label, j, 0);
             }
 
         }
 
 
-
-
     }
-    public void pokreni(ActionEvent actionEvent){
 
-        System.out.println("Pokreni");
-
+    public void pokreni(ActionEvent actionEvent) {
         if (brojac == 0) {
             new Thread(() -> {
                 try {
@@ -196,7 +189,7 @@ public class MainController implements Initializable {
             }).start();
             new Thread(() -> {
                 mjerenjeVremena();
-               // measureGameDuration();
+                // measureGameDuration();
             }).start();
             new Thread(() ->
             {
@@ -224,6 +217,7 @@ public class MainController implements Initializable {
 
 
     }
+
     public void pauzirajSimulaciju(ActionEvent actionEvent) {
 
         System.out.println("Pauza");
@@ -234,25 +228,39 @@ public class MainController implements Initializable {
 
     }
 
-   public void prikaziKartu(Karta karta)
-   {
+    public void prikaziKartu(Karta karta) {
 
-       File file = new File(karta.getPutanjaDoSlike());
-       javafx.scene.image.Image image = new Image(file.toURI().toString(), 300, 300, false, false);
-       Platform.runLater(() -> TreutnaKarta.setImage(image));
+        File file = new File(karta.getPutanjaDoSlike());
+        javafx.scene.image.Image image = new Image(file.toURI().toString(), 300, 300, false, false);
+        Platform.runLater(() -> TreutnaKarta.setImage(image));
 
-   }
-
-//ovo je pravi kod za diamond
-    public void postaviDiamond(Polje p1)
-    {int x=getX(p1);
-        int y=getY(p1);
-        Circle circle=new Circle(10,Color.DEEPPINK);
-        Platform.runLater(()->matrica.add(circle,y,x));
     }
-    public void skloniDiamond(Polje p1)
-    {
-        try {int x=getX(p1);
+
+    //ovo je pravi kod za diamond
+    public void postaviDiamond(Polje polje) {
+       /* int x=getX(p1);
+        int y=getY(p1);
+        Circle circle=new Circle(a1,Color.DEEPPINK);
+        Platform.runLater(()->matrica.add(circle,y,x));*/
+        try {
+            int x = getX(polje);
+            int y = getY(polje);
+       /* Ellipse elipse=new Ellipse(a1,a2);
+        elipse.setFill(Color.DEEPPINK);
+        Platform.runLater(()->matrica.add(elipse,y,x));;*/
+
+            Polygon polygon = new Polygon();
+            polygon.getPoints().addAll(new Double[]{10.0, 15.0, 15.0, 30.0, 35.0, 30.0, 40.0, 15.0, 25.0, 5.0,});
+            polygon.setFill(Color.LIGHTBLUE);
+            Platform.runLater(() -> matrica.add(polygon, y, x));
+        } catch (Exception e) {
+            log(e);
+        }
+
+    }
+
+    public void skloniDiamond(Polje p1) {
+        /*try {int x=getX(p1);
             int y=getY(p1);
             Node currentNode = null;
             ObservableList<Node> childrens = matrica.getChildren();
@@ -271,51 +279,84 @@ public class MainController implements Initializable {
         catch (Exception e)
         {
             log(e);
+        }*/
+        try {
+            int x = getX(p1);
+            int y = getY(p1);
+           /* Node currentNode = null;
+            ObservableList<Node> childrens = matrica.getChildren();
+            for (Node node : childrens) {
+                if (node instanceof Ellipse && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
+                    currentNode = node;
+                }
+            }
+            synchronized (lock) {
+                Node finalCurrentNode = currentNode;
+                if (finalCurrentNode != null) {
+                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
+                }
+            }
+        }*/
+            Node currentNode = null;
+            ObservableList<Node> childrens = matrica.getChildren();
+            for (Node node : childrens) {
+                if (node instanceof Polygon && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
+                    currentNode = node;
+                }
+            }
+            synchronized (lock) {
+                Node finalCurrentNode = currentNode;
+                if (finalCurrentNode != null) {
+                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
+                }
+            }
+        } catch (Exception e) {
+            log(e);
         }
     }
-   public void skloniDiamondSliciaDiamond(Polje p1)
-   {
-       try {
-           int x=getX(p1);
-           int y=getY(p1);
-           Node currentNode = null;
-           ObservableList<Node> childrens = matrica.getChildren();
-           for (Node node : childrens) {
-               if (node instanceof ImageView && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                   currentNode = node;
-               }
-           }
-           synchronized (lock) {
-               Node finalCurrentNode = currentNode;
-               if (finalCurrentNode != null) {
-                   Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-               }
-           }
-       }
-       catch (Exception e)
-       {
-           log(e);
-       }
-   }
 
-   public void postaviDiamondSlicicaDiamond(Polje p1) {
-       int x=getX(p1);
-       int y=getY(p1);
-       FileInputStream imageStream = null;
-       try {
-           imageStream = new FileInputStream("src"+ File.separator+"main"+File.separator+"resources"+File.separator+
-                   "slikaBonusa"+File.separator+"diamond.png");
-       } catch (FileNotFoundException e) {
-           log(e);
-       }
-       Image image = new Image(imageStream);
-     Platform.runLater(()->  matrica.add(new ImageView(image), x, y));
+    public void skloniDiamondslikadijamanta(Polje p1) {
+        try {
+            int x = getX(p1);
+            int y = getY(p1);
+            Node currentNode = null;
+            ObservableList<Node> childrens = matrica.getChildren();
+            for (Node node : childrens) {
+                if (node instanceof ImageView && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
+                    currentNode = node;
+                }
+            }
+            synchronized (lock) {
+                Node finalCurrentNode = currentNode;
+                if (finalCurrentNode != null) {
+                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
+                }
+            }
+        } catch (Exception e) {
+            log(e);
+        }
+    }
+
+    public void postaviDiamondslikadijamnat(Polje p1) {
+        int x = getX(p1);
+        int y = getY(p1);
+        FileInputStream imageStream = null;
+        try {
+            imageStream = new FileInputStream("src" + File.separator + "main" + File.separator + "resources" + File.separator +
+                    "slikaBonusa" + File.separator + "diamond.png");
+        } catch (FileNotFoundException e) {
+            log(e);
+        }
+        Image image = new Image(imageStream);
+        Platform.runLater(() -> matrica.add(new ImageView(image), x, y));
 
 
-   }
+    }
+
     @FXML
     public void skloniCrneRupe(Polje p1) {
-        try {int x=getX(p1);
+        //  try {
+            /*int x=getX(p1);
             int y=getY(p1);
             Node currentNode = null;
             ObservableList<Node> childrens = matrica.getChildren();
@@ -334,103 +375,108 @@ public class MainController implements Initializable {
         catch (Exception e)
         {
             log(e);
-        }
-
-    }
-    @FXML
-    public void postaviCrneRupe(Polje polje)
-    {
-        int x=getX(polje);
-        int y=getY(polje);
-        Ellipse elipse=new Ellipse(10,10);
-        elipse.setFill(Color.BLACK);
-        Platform.runLater(()->matrica.add(elipse,y,x));;
-    }
-
-    @FXML
-    public void postaviFiguruNaPolje(Polje p1,Figura figura)
-    {  int x=getX(p1);
-        int y=getY(p1);
-        Rectangle rectangle=new Rectangle(row1,col1);
-        Label label=new Label();
-        if(figura.getBoja().equals(Boja.CRVENA))
-        {
-            rectangle.setFill(Color.RED);
-            if(figura instanceof ObicnaFigura)
-            {
-                label.setText("OF");
-            }
-            else if(figura instanceof SuperBrzaFigura)
-            {
-                label.setText("SF");
-            }
-            else
-            {
-                label.setText("LF");
-            }
-        }
-        else if(figura.getBoja().equals(Boja.ZELENA))
-        {
-            rectangle.setFill(Color.GREEN);
-            if(figura instanceof ObicnaFigura)
-            {
-                label.setText("OF");
-            }
-            else if(figura instanceof SuperBrzaFigura)
-            {
-                label.setText("SF");
-
-            }
-            else
-            {
-                label.setText("LF");
-            }
-        }
-        else if(figura.getBoja().equals(Boja.PLAVA))
-        {
-            rectangle.setFill(Color.BLUE);
-            if(figura instanceof ObicnaFigura)
-            {
-                label.setText("OF");
-            }
-            else if(figura instanceof SuperBrzaFigura)
-            {
-                label.setText("SF");
-            }
-            else
-            {
-                label.setText("LF");
-            }
-        }
-        else
-        {
-            rectangle.setFill(Color.YELLOW);
-            if(figura instanceof ObicnaFigura)
-            {
-                label.setText("OF");
-            }
-            else if(figura instanceof SuperBrzaFigura)
-            {
-                label.setText("SF");
-            }
-            else
-            {
-                label.setText("LF");
-            }
-        }
-        Platform.runLater(()->
-        {
-            matrica.add(rectangle,y,x);
-            matrica.add(label,y,x);
-        });
-    }
-
-    @FXML
-    public void skloniFiguru(Polje p)
-    {
+        }*/
         try {
-            int x=getX(p);
-            int y=getY(p);
+            int x = getX(p1);
+            int y = getY(p1);
+            Node currentNode = null;
+            ObservableList<Node> childrens = matrica.getChildren();
+            for (Node node : childrens) {
+                if (node instanceof Circle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
+                    currentNode = node;
+                }
+            }
+            synchronized (lock) {
+                Node finalCurrentNode = currentNode;
+                if (finalCurrentNode != null) {
+                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
+                }
+            }
+        } catch (Exception e) {
+            log(e);
+        }
+
+    }
+
+    @FXML
+    public void postaviCrneRupe(Polje polje) {
+        /*int x=getX(polje);
+        int y=getY(polje);
+        Ellipse elipse=new Ellipse(a1,a2);
+        elipse.setFill(Color.BLACK);
+        Platform.runLater(()->matrica.add(elipse,y,x));;*/
+
+//kod za bonus bio
+        try {
+            int x = getX(polje);
+            int y = getY(polje);
+            Circle circle = new Circle(a1, Color.BLACK);
+            Platform.runLater(() -> matrica.add(circle, y, x));
+        } catch (Exception e) {
+            log(e);
+        }
+    }
+
+    @FXML
+    public void postaviFiguruNaPolje(Polje p1, Figura figura) {
+        try {
+            int x = getX(p1);
+            int y = getY(p1);
+            Rectangle rectangle = new Rectangle(row1, col1);
+            Label label = new Label();
+            if (figura.getBoja().equals(Boja.CRVENA)) {
+                rectangle.setFill(Color.RED);
+                if (figura instanceof ObicnaFigura) {
+                    label.setText("OF");
+                } else if (figura instanceof SuperBrzaFigura) {
+                    label.setText("SF");
+                } else {
+                    label.setText("LF");
+                }
+            } else if (figura.getBoja().equals(Boja.ZELENA)) {
+                rectangle.setFill(Color.GREEN);
+                if (figura instanceof ObicnaFigura) {
+                    label.setText("OF");
+                } else if (figura instanceof SuperBrzaFigura) {
+                    label.setText("SF");
+
+                } else {
+                    label.setText("LF");
+                }
+            } else if (figura.getBoja().equals(Boja.PLAVA)) {
+                rectangle.setFill(Color.BLUE);
+                if (figura instanceof ObicnaFigura) {
+                    label.setText("OF");
+                } else if (figura instanceof SuperBrzaFigura) {
+                    label.setText("SF");
+                } else {
+                    label.setText("LF");
+                }
+            } else {
+                rectangle.setFill(Color.YELLOW);
+                if (figura instanceof ObicnaFigura) {
+                    label.setText("OF");
+                } else if (figura instanceof SuperBrzaFigura) {
+                    label.setText("SF");
+                } else {
+                    label.setText("LF");
+                }
+            }
+            Platform.runLater(() ->
+            {
+                matrica.add(rectangle, y, x);
+                matrica.add(label, y, x);
+            });
+        } catch (Exception e) {
+            log(e);
+        }
+    }
+
+    @FXML
+    public void skloniFiguru(Polje p) {
+        try {
+            int x = getX(p);
+            int y = getY(p);
             Node currentNode = null;
             Node currentNode1 = null;
             ObservableList<Node> childrens = matrica.getChildren();
@@ -451,106 +497,108 @@ public class MainController implements Initializable {
                     Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode1));
                 }
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             log(e);
         }
     }
 
-    public int getX(Polje p)
-    {
-        int pozicija=p.getElement().getX();
-        return (pozicija-1)/dimenzija;
+    public int getX(Polje p) {
+        int pozicija = p.getElement().getX();
+        return (pozicija - 1) / dimenzija;
 
     }
-    public int getY(Polje p)
-    {
-        int pozicija=p.getElement().getX();
-        return (pozicija - 1) % dimenzija ;
+
+    public int getY(Polje p) {
+        int pozicija = p.getElement().getX();
+        return (pozicija - 1) % dimenzija;
     }
 
-    public void setDimension()
-    {
+    public void setDimension() {
+        try {
 
-
-        if(dimenzija==7)
-        {
-            row1=45;
-            col1=45;
-        }
-        else if(dimenzija==8)
-        {
-            row1=40;
-            col1=40;
-        }
-        else if(dimenzija==9)
-        {
-            row1=35;
-            col1=35;
-        }
-        else if(dimenzija==10)
-        {
-            row1=30;
-            col1=30;
-        }
-
-
-    }
-    public void nacrtajMatricu()
-    {
-        game_service = new GameService();//game_service = GameService.getInstance();
-        mainController = this;
-        setDimension();
-        int vel = dimenzija * dimenzija;
-
-        for (int i = 0; i < dimenzija; i++) {
-            ColumnConstraints col = new ColumnConstraints();
-            col.setMinWidth(col1);
-            col.setPrefWidth(col1);
-            matrica.getColumnConstraints().add(col);
-        }
-        for (int i = 0; i < dimenzija; i++) {
-            RowConstraints row = new RowConstraints();
-            row.setMinHeight(row1);
-            row.setPrefHeight(row1);
-            matrica.getRowConstraints().add(row);
-
-        }
-        int content=1;
-        for (int i = 0; i < dimenzija; i++) {
-            for (int j = 0; j < dimenzija; j++) {
-                Text text = new Text(" " + String.valueOf(content));
-                text.setStyle("-fx-text-alignment: center");
-                matrica.add(text, j, i);
-                content++;
+            if (dimenzija == 7) {
+                row1 = 45;
+                col1 = 45;
+                a1 = 15;
+                a2 = 15;
+            } else if (dimenzija == 8) {
+                row1 = 40;
+                col1 = 40;
+                a1 = 11;
+                a2 = 11;
+            } else if (dimenzija == 9) {
+                row1 = 35;
+                col1 = 35;
+                a1 = 9;
+                a2 = 9;
+            } else if (dimenzija == 10) {
+                row1 = 30;
+                col1 = 30;
+                a1 = 8;
+                a2 = 8;
             }
+        } catch (Exception e) {
+            log(e);
         }
 
-
     }
-    public void mjerenjeVremena()
-    {
-        int broj=0;
-        while(!krajIgre)
-        {
-            if(!pauza) {
-                game_service.trajanjeIgre=broj;
-                String vrijeme = broj + " [s]";
-                Platform.runLater(() -> LabelaZaVrijemeTrajanjaIgre.setText("Vrijeme trajanja igre: " + vrijeme));
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception e) {
-                    log(e);
+
+    public void nacrtajMatricu() {
+        try {
+            game_service = new GameService();//game_service = GameService.getInstance();
+            mainController = this;
+            setDimension();
+            int vel = dimenzija * dimenzija;
+
+            for (int i = 0; i < dimenzija; i++) {
+                ColumnConstraints col = new ColumnConstraints();
+                col.setMinWidth(col1);
+                col.setPrefWidth(col1);
+                matrica.getColumnConstraints().add(col);
+            }
+            for (int i = 0; i < dimenzija; i++) {
+                RowConstraints row = new RowConstraints();
+                row.setMinHeight(row1);
+                row.setPrefHeight(row1);
+                matrica.getRowConstraints().add(row);
+
+            }
+            int content = 1;
+            for (int i = 0; i < dimenzija; i++) {
+                for (int j = 0; j < dimenzija; j++) {
+                    Text text = new Text(" " + String.valueOf(content));
+                    text.setStyle("-fx-text-alignment: center");
+                    matrica.add(text, j, i);
+                    content++;
                 }
-                broj++;
             }
-            else
-            {
-                System.out.print("");
-            }
-        }
 
+        } catch (Exception e) {
+            log(e);
+        }
+    }
+
+    public void mjerenjeVremena() {
+        try {
+            int broj = 0;
+            while (!krajIgre) {
+                if (!pauza) {
+                    game_service.trajanjeIgre = broj;
+                    String vrijeme = broj + " [s]";
+                    Platform.runLater(() -> LabelaZaVrijemeTrajanjaIgre.setText("Vrijeme trajanja igre: " + vrijeme));
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                        log(e);
+                    }
+                    broj++;
+                } else {
+                    System.out.print("");
+                }
+            }
+        } catch (Exception e) {
+            log(e);
+        }
     }
 
 
@@ -585,67 +633,71 @@ public class MainController implements Initializable {
 */
 
     public void setBrojOdigranihIgara(Label brojIgaraLabel) {
-
-        String path = "src" + File.separator + "main" + File.separator + "java" + File.separator + "com" + File.separator + "example" + File.separator + "diamondcircle" + File.separator + "rezultatiIgre";
-        File file = new File(path);
-        int fileCounter = 0;
-        String str[] = file.list();
-        for (String s : str) {
-            File fls = new File(file, s);
-            if (fls.isFile() && fls.getName().startsWith("IGRA") && fls.getName().endsWith(".txt")) {
-                fileCounter++;
+        try {
+            String path = "src" + File.separator + "main" + File.separator + "java" + File.separator + "com" + File.separator + "example" + File.separator + "diamondcircle" + File.separator + "rezultatiIgre";
+            File file = new File(path);
+            int fileCounter = 0;
+            String str[] = file.list();
+            for (String s : str) {
+                File fls = new File(file, s);
+                if (fls.isFile() && fls.getName().startsWith("IGRA") && fls.getName().endsWith(".txt")) {
+                    fileCounter++;
+                }
             }
+            System.out.println("broj fajlova " + fileCounter);
+            brojIgaraLabel.setText("Trenutni broj odigranih igara: " + fileCounter);
+        } catch (Exception e) {
+            log(e);
         }
-        System.out.println("broj fajlova " + fileCounter);
-        brojIgaraLabel.setText("Trenutni broj odigranih igara: " + fileCounter);
-
     }
+
     public void switchToRezultati(ActionEvent event) throws IOException {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Rezultati.fxml"));
             //stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Rezultati");
-            scene = new Scene(root,900,650);
+            scene = new Scene(root, 900, 650);
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.show();        }
-        catch (Exception e)
-        {
+            stage.show();
+        } catch (Exception e) {
             log(e);
         }
     }
 
-    public void opisKarte(Igrac igrac,Figura trenutnaFigura)
-    {
-
-
-        builder.append("Na potezu je " + igrac.getIme() + " , ");
-        builder.append(trenutnaFigura.getIme() + ", prelazi " + trenutnaFigura.getUkupniPomjeraj() + " polja, pomjera se sa pozicije ");
-        builder.append(trenutnaFigura.getPoljeSaKojegpocinjeFigura().getElement().getX() + " na " + trenutnaFigura.getPoljeNaKojeStajeFigura().getElement().getX());
-        String str=builder.toString();
-        Platform.runLater(() -> opisIgre.setText(str));
+    public void opisKarte(Igrac igrac, Figura trenutnaFigura) {
         try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
+
+            builder.append("Na potezu je " + igrac.getIme() + " , ");
+            builder.append(trenutnaFigura.getIme() + ", prelazi " + trenutnaFigura.getUkupniPomjeraj() + " polja, pomjera se sa pozicije ");
+            builder.append(trenutnaFigura.getPoljeSaKojegpocinjeFigura().getElement().getX() + " na " + trenutnaFigura.getPoljeNaKojeStajeFigura().getElement().getX());
+            String str = builder.toString();
+            Platform.runLater(() -> opisIgre.setText(str));
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                log(e);
+            }
+            builder.delete(0, builder.length());
+        } catch (Exception e) {
             log(e);
         }
-        builder.delete(0,builder.length());
-
     }
 
-    public void opisSpecijalneKarte(Karta trenutnaKarta)
-    {
-
-        builder.append("Specijalna karta, kreirano: " + ((SpecijalnaKarta) trenutnaKarta).getBrRupa() + " rupa.");
-        String str = builder.toString();
-        Platform.runLater(() -> opisIgre.setText(str));
+    public void opisSpecijalneKarte(Karta trenutnaKarta) {
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
+            builder.append("Specijalna karta, kreirano: " + ((SpecijalnaKarta) trenutnaKarta).getBrRupa() + " rupa.");
+            String str = builder.toString();
+            Platform.runLater(() -> opisIgre.setText(str));
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                log(e);
+            }
+            builder.delete(0, builder.length());
+        } catch (Exception e) {
             log(e);
         }
-        builder.delete(0, builder.length());
-
 
     }
 
@@ -671,33 +723,26 @@ public class MainController implements Initializable {
     public void prikaziKretanjeIzabraneFigure(MouseEvent mouseEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("kretanjeFigure.fxml"));
-            Scene scene = new Scene(root, 600, 500,Color.GRAY);
-            Stage newStage=new Stage();
+            Scene scene = new Scene(root, 600, 500, Color.GRAY);
+            Stage newStage = new Stage();
             newStage.setTitle("kretanje " + nazivFigureZaPrikazKretanja);
             newStage.setScene(scene);
             newStage.setResizable(false);
             newStage.show();
-            for(int j=0;j<brojIgraca;j++)
-            {
-                for(int k=0;k<getIgraci().get(0).getFigureIgraca().size();k++)
-                {
-                    if(getIgraci().get(j).getFigureIgraca().get(k).getIme().equals(nazivFigureZaPrikazKretanja))
-                    {
-                        pom=getIgraci().get(j).getFigureIgraca().get(k);
+            for (int j = 0; j < brojIgraca; j++) {
+                for (int k = 0; k < getIgraci().get(0).getFigureIgraca().size(); k++) {
+                    if (getIgraci().get(j).getFigureIgraca().get(k).getIme().equals(nazivFigureZaPrikazKretanja)) {
+                        pom = getIgraci().get(j).getFigureIgraca().get(k);
                     }
                 }
             }
-            if(pom !=null)
-            {
+            if (pom != null) {
                 kretanjeFigure.prikaziKretanjeFigure(pom);
-            }
-            else{
+            } else {
                 System.out.printf("nzm, ubij seee");
             }
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             log(e);
         }
 

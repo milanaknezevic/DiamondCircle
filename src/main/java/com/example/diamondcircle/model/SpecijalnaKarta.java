@@ -35,36 +35,32 @@ public class SpecijalnaKarta extends Karta {
     }
 
     public void postaviRupe() {
-       Random rand = new Random();
+        Random rand = new Random();
         int i = 0;
-      // synchronized (MainController.lock)
-       // {
-            while (i < this.brRupa) {
-                Polje x = putanjaFigure.get(rand.nextInt(putanjaFigure.size()));
-                if( !x.isImaRupa() && !x.isImaBonus() && !x.equals(putanjaFigure.get(putanjaFigure.size()-1)) ) {
-                    x.setImaRupa(true);
-                    poljaNaKomSuRupe.add(x);
-                    mainController.postaviCrneRupe(x);
-                    MatricaZaPrikaz.postaviCrneRupeNaMatricu(x);
-                    i++;
+        while (i < this.brRupa) {
+            Polje x = putanjaFigure.get(rand.nextInt(putanjaFigure.size()));
+            if (!x.isImaRupa() && !x.isImaBonus() && !x.equals(putanjaFigure.get(putanjaFigure.size() - 1))) {
+                x.setImaRupa(true);
+                poljaNaKomSuRupe.add(x);
+                mainController.postaviCrneRupe(x);
+                MatricaZaPrikaz.postaviCrneRupeNaMatricu(x);
+                i++;
 
-                    if (x.isImaFigura() && !(x.getFigura() instanceof LebdecaFigura))
-                    {
-                        try {
+                if (x.isImaFigura() && !(x.getFigura() instanceof LebdecaFigura)) {
+                    try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         log(e);
                     }
-                        x.getFigura().setFiguraZavrsilaKretanje(true);
-                        int a = x.getElement().getX();
-                        System.out.println("Figura " + a + " zavrsila kretanje");
-                        x.setImaFigura(false);
-                        x.setFigura(null);
-                        MatricaZaPrikaz.skloniFiguruSaMatrice(x);
-                        mainController.skloniFiguru(x);
-                    }
+                    x.getFigura().setFiguraZavrsilaKretanje(true);
+                    int a = x.getElement().getX();
+                    x.setImaFigura(false);
+                    x.setFigura(null);
+                    MatricaZaPrikaz.skloniFiguruSaMatrice(x);
+                    mainController.skloniFiguru(x);
                 }
             }
+        }
 
         //}
 
@@ -74,10 +70,9 @@ public class SpecijalnaKarta extends Karta {
             log(e);
         }
 
-        synchronized (MainController.lock)
-        {
-            for(int j=0;j<putanjaFigure.size();j++){
-                Polje p=putanjaFigure.get(j);
+        synchronized (MainController.lock) {
+            for (int j = 0; j < putanjaFigure.size(); j++) {
+                Polje p = putanjaFigure.get(j);
                 int index = putanjaFigure.indexOf(p);
                 putanjaFigure.get(index).setImaRupa(false);
                 mainController.skloniCrneRupe(p);

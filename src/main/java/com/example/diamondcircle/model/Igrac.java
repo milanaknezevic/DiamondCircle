@@ -1,66 +1,57 @@
 package com.example.diamondcircle.model;
 
-import java.util.*;
-
-import static com.example.diamondcircle.MainController.mainController;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 public class Igrac {
     private String ime;
     private List<Figura> figureIgraca = new ArrayList<Figura>();
     private int bojaIgraca;
-    Random rand =new Random();
+    Random rand = new Random();
     private boolean igracZavrsio;
-    private static int id=1;
+    private static int id = 1;
     private Figura trenutnaFigura;
-    private boolean igracZavrsioKretanje=false;
+    private boolean igracZavrsioKretanje = false;
     private int brojPomjerajaFigure;//za koje ce pomjeriti svoju figuru
 
-    public Igrac()
-    {
+    public Igrac() {
         this.ime = "Igrac" + id;
         ++id;
         this.igracZavrsio = false;
 
         //igrac zauzima boju za figure
         int boja;
-        while(true)
-        {
+        while (true) {
             boja = rand.nextInt(4);
-            if((GameService.zauzeteBoje.contains(boja)))
-            {
+            if ((GameService.zauzeteBoje.contains(boja))) {
                 continue;
-            }
-            else {
+            } else {
                 GameService.zauzeteBoje.add(boja);
-                bojaIgraca=boja;
+                bojaIgraca = boja;
                 break;
             }
         }
         //igrac dobija 4 random figure
 
-        while(this.figureIgraca.size()<4)//ide manje od 4
+        while (this.figureIgraca.size() < 4)//ide manje od 4
         {
-            int x= rand.nextInt(3);
+            int x = rand.nextInt(3);
 
-            if(x==0)
-            {
-                ObicnaFigura obicnaFigura=new ObicnaFigura(boja);
+            if (x == 0) {
+                ObicnaFigura obicnaFigura = new ObicnaFigura(boja);
                 this.figureIgraca.add(obicnaFigura);
-            }
-            else if(x==1)
-            {
-                LebdecaFigura lebdecaFigura=new LebdecaFigura(boja);
+            } else if (x == 1) {
+                LebdecaFigura lebdecaFigura = new LebdecaFigura(boja);
                 this.figureIgraca.add(lebdecaFigura);
-            }
-            else if(x==2)
-            {
-                SuperBrzaFigura superBrzaFigura=new SuperBrzaFigura(boja);
+            } else if (x == 2) {
+                SuperBrzaFigura superBrzaFigura = new SuperBrzaFigura(boja);
                 this.figureIgraca.add(superBrzaFigura);
             }
         }
         setFigureIgraca(figureIgraca);
         Collections.shuffle(figureIgraca);
-
 
 
     }
@@ -131,16 +122,15 @@ public class Igrac {
     }
 
 
-
-    public Figura uzmiSlobodnuFiguru(Igrac igrac)
-    {
-        return igrac.getFigureIgraca().stream().filter(e->!e.isFiguraZavrsilaKretanje() && !e.isFiguraPreslaCijeluPutanju()).
+    public Figura uzmiSlobodnuFiguru(Igrac igrac) {
+        return igrac.getFigureIgraca().stream().filter(e -> !e.isFiguraZavrsilaKretanje() && !e.isFiguraPreslaCijeluPutanju()).
                 findFirst().orElse(null);
     }
-    public void play(){
 
-       Figura temp=uzmiSlobodnuFiguru(this);
-        if(temp!=null) {
+    public void play() {
+
+        Figura temp = uzmiSlobodnuFiguru(this);
+        if (temp != null) {
             trenutnaFigura = temp;
             trenutnaFigura.setBrojPomjeranjaJedneFigure(brojPomjerajaFigure);
             System.out.println("Naziv Figure " + trenutnaFigura.getIme());
@@ -155,12 +145,10 @@ public class Igrac {
                 this.setIgracZavrsio(true);
             }*/
 
-        }
-        else {
-            System.out.println("Igrac "+ this.getIme() +  " nema vise figura");
+        } else {
+            System.out.println("Igrac " + this.getIme() + " nema vise figura");
             this.setIgracZavrsio(true);
         }
-
 
 
     }

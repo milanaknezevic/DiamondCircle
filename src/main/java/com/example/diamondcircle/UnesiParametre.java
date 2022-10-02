@@ -12,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,16 +23,17 @@ import static com.example.diamondcircle.model.GameService.brojIgraca;
 import static com.example.diamondcircle.model.GameService.dimenzija;
 
 public class UnesiParametre implements Initializable {
-    private Stage stage=new Stage();
+    private Stage stage = new Stage();
     private Scene scene;
     @FXML
-    private ChoiceBox<Integer> choiceBox1=new ChoiceBox<>();
+    private ChoiceBox<Integer> choiceBox1 = new ChoiceBox<>();
     @FXML
-    private ChoiceBox<Integer> choiceBox2=new ChoiceBox<>();
+    private ChoiceBox<Integer> choiceBox2 = new ChoiceBox<>();
     ObservableList<Integer> dimenzijeMatriceList = FXCollections
             .observableArrayList(7, 8, 9, 10);
     ObservableList<Integer> brojIgracaList = FXCollections
-            .observableArrayList(2,3,4);
+            .observableArrayList(2, 3, 4);
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -43,14 +43,14 @@ public class UnesiParametre implements Initializable {
             log(e);
         }
     }
+
     public void switchToScene2(ActionEvent event) throws IOException, InterruptedException {
 
         dimenzija = choiceBox1.getSelectionModel().getSelectedItem();//System.out.print(selectedDimenzija);
         brojIgraca = choiceBox2.getSelectionModel().getSelectedItem();//System.out.print(selectedBrojIgraca);
-        MatricaZaPrikaz mzp= new MatricaZaPrikaz();
-        for(int i=0;i<dimenzija*dimenzija;i++)
-        {
-            mzp.matricaPOM[i] =new MatricaZaPrikaz();
+        MatricaZaPrikaz mzp = new MatricaZaPrikaz();
+        for (int i = 0; i < dimenzija * dimenzija; i++) {
+            mzp.matricaPOM[i] = new MatricaZaPrikaz();
         }
         Parent root = FXMLLoader.load(getClass().getResource("Igra.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -67,12 +67,13 @@ public class UnesiParametre implements Initializable {
                 }
             });
             System.exit(0);
-        }else{
+        } else {
             stage.show();
         }
 
 
     }
+
     @FXML
     private void inicijalizujChoiceBox() {
         choiceBox1.setItems(dimenzijeMatriceList);

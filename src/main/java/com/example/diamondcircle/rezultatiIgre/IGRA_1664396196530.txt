@@ -1,8 +1,0 @@
-Igra 1 - Igrac1
-	Figura1 (SuperBrzaFigura,ZUTA) - predjeni put (4-12-20-28-34-40-46-38-30-22-16-10-11-19-27-33-39-31-23-17-18-26-32-24-25) - stigla do cilja (da)
-
-Igra 3 - Igrac2
-	Figura2 (SuperBrzaFigura,CRVENA) - predjeni put (4-12-20-28-34-40-46-38-30-22-16) - stigla do cilja (ne)
-
-
-Ukupno vrijeme trajanja igre: 49[s]
