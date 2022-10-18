@@ -13,6 +13,7 @@ import static com.example.diamondcircle.model.GameService.*;
 
 public class DuhFigura extends Thread {
     private static DuhFigura instance = null;
+    public static Object duhLock= new Object();
     Random rand = new Random();
     public static CopyOnWriteArrayList<Polje> poljaNaKomSuBonusi = new CopyOnWriteArrayList<>();
 
@@ -28,6 +29,7 @@ public class DuhFigura extends Thread {
 
     @Override
     public void run() {
+        try{
         while (!krajIgre) {
             int brojDijamanata = rand.nextInt((dimenzija - 2) + 1) + 2; //rand.nextInt((max - min) + 1) + min;
             int i = 0;
@@ -50,7 +52,7 @@ public class DuhFigura extends Thread {
                     x.setImaBonus(true);
                     poljaNaKomSuBonusi.add(x);
                     MatricaZaPrikaz.postaviBonusNaMatricu(x);
-                    mainController.postaviDiamond(x);
+                    mainController.postaviBonus(x);
                     i++;
                 } else {
                     System.out.printf("");
@@ -65,19 +67,27 @@ public class DuhFigura extends Thread {
             }
             synchronized (MainController.lock) {
                 for (int j = 0; j < putanjaFigure.size(); j++) {
+
                     Polje p = putanjaFigure.get(j);
+                   // synchronized (duhLock)
+                    //{
                     int index = putanjaFigure.indexOf(p);
                     putanjaFigure.get(index).setImaBonus(false);
-                    mainController.skloniDiamond(p);
+                    mainController.skloniBonus(p);
                     MatricaZaPrikaz.skloniBonusSaMatrice(p);
-                    try {
+
+                   // }
+                   /* try {
                         sleep(10);
                     } catch (InterruptedException e) {
                         log(e);
-                    }
+                    }*/
                 }
             }
 
         }
+    } catch (Exception e) {
+        log(e);
+    }
     }
 }

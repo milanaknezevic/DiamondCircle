@@ -31,6 +31,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 import static com.example.diamondcircle.KretanjeFigure.kretanjeFigure;
@@ -126,7 +127,7 @@ public class MainController implements Initializable {
         }
 
         // Kako sortirati :(
-        Collections.sort(figureIgracaList);
+       // Collections.sort(figureIgracaList);
         listaFiguraIgraca.getItems().addAll(figureIgracaList);
         listaFiguraIgraca.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -139,7 +140,7 @@ public class MainController implements Initializable {
     }
 
     public void setIgrace() {
-
+try{
         for (int j = 0; j < brojIgraca; j++) {
             int boja = getIgraci().get(j).getBojaIgraca();
             if (boja == 0)//crvena
@@ -169,23 +170,22 @@ public class MainController implements Initializable {
             }
 
         }
-
+    } catch (Exception e) {
+        log(e);
+    }
 
     }
 
     public void pokreni(ActionEvent actionEvent) {
+        try{
         if (brojac == 0) {
             new Thread(() -> {
                 try {
-                    try {
-                        sleep(1000);
-                    } catch (InterruptedException e) {
-                        log(e);
-                    }
-                    game_service.igra();
+                    sleep(1000);
                 } catch (InterruptedException e) {
                     log(e);
                 }
+                game_service.igra();
             }).start();
             new Thread(() -> {
                 mjerenjeVremena();
@@ -215,17 +215,21 @@ public class MainController implements Initializable {
             }
         }
 
-
+        } catch (Exception e) {
+            log(e);
+        }
     }
 
     public void pauzirajSimulaciju(ActionEvent actionEvent) {
-
+try{
         System.out.println("Pauza");
         pause.setVisible(false);
         start.setVisible(true);
         game_service.setPauza(true);
 
-
+} catch (Exception e) {
+    log(e);
+}
     }
 
     public void prikaziKartu(Karta karta) {
@@ -237,18 +241,10 @@ public class MainController implements Initializable {
     }
 
     //ovo je pravi kod za diamond
-    public void postaviDiamond(Polje polje) {
-       /* int x=getX(p1);
-        int y=getY(p1);
-        Circle circle=new Circle(a1,Color.DEEPPINK);
-        Platform.runLater(()->matrica.add(circle,y,x));*/
+    public void postaviBonus(Polje polje) {
         try {
             int x = getX(polje);
             int y = getY(polje);
-       /* Ellipse elipse=new Ellipse(a1,a2);
-        elipse.setFill(Color.DEEPPINK);
-        Platform.runLater(()->matrica.add(elipse,y,x));;*/
-
             Polygon polygon = new Polygon();
             polygon.getPoints().addAll(new Double[]{10.0, 15.0, 15.0, 30.0, 35.0, 30.0, 40.0, 15.0, 25.0, 5.0,});
             polygon.setFill(Color.LIGHTBLUE);
@@ -259,59 +255,39 @@ public class MainController implements Initializable {
 
     }
 
-    public void skloniDiamond(Polje p1) {
-        /*try {int x=getX(p1);
-            int y=getY(p1);
-            Node currentNode = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Circle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
-                }
-            }
-            synchronized (lock) {
-                Node finalCurrentNode = currentNode;
-                if (finalCurrentNode != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            log(e);
-        }*/
+    public void skloniBonus(Polje p1) {
         try {
             int x = getX(p1);
             int y = getY(p1);
-           /* Node currentNode = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Ellipse && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
+            synchronized (matrica) {
+                CopyOnWriteArrayList<Node> childrens = new CopyOnWriteArrayList<>( matrica.getChildren());
+                Node currentNode = null;
+
+                for (Node node : childrens) {
+                    if (node instanceof Polygon && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
+                        currentNode = node;
+                    }
                 }
-            }
-            synchronized (lock) {
-                Node finalCurrentNode = currentNode;
-                if (finalCurrentNode != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-                }
-            }
-        }*/
-            Node currentNode = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Polygon && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
-                }
-            }
-            synchronized (lock) {
-                Node finalCurrentNode = currentNode;
-                if (finalCurrentNode != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
+                if (currentNode != null) {
+                    //  synchronized (lock) {
+                    Node finalCurrentNode = currentNode;
+                    if (finalCurrentNode != null) {
+                        Platform.runLater(() ->
+                                {
+                                    // synchronized (matrica.getChildren())
+                                    // {
+                                    matrica.getChildren().remove(finalCurrentNode);
+                                    //}
+                                }
+                        );
+                    }
+                    // }
+
                 }
             }
         } catch (Exception e) {
-            log(e);
+            //log(e);
+            e.printStackTrace();
         }
     }
 
@@ -355,27 +331,6 @@ public class MainController implements Initializable {
 
     @FXML
     public void skloniCrneRupe(Polje p1) {
-        //  try {
-            /*int x=getX(p1);
-            int y=getY(p1);
-            Node currentNode = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Ellipse && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
-                }
-            }
-            synchronized (lock) {
-                Node finalCurrentNode = currentNode;
-                if (finalCurrentNode != null) {
-                    Platform.runLater(() -> matrica.getChildren().remove(finalCurrentNode));
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            log(e);
-        }*/
         try {
             int x = getX(p1);
             int y = getY(p1);
@@ -400,13 +355,7 @@ public class MainController implements Initializable {
 
     @FXML
     public void postaviCrneRupe(Polje polje) {
-        /*int x=getX(polje);
-        int y=getY(polje);
-        Ellipse elipse=new Ellipse(a1,a2);
-        elipse.setFill(Color.BLACK);
-        Platform.runLater(()->matrica.add(elipse,y,x));;*/
 
-//kod za bonus bio
         try {
             int x = getX(polje);
             int y = getY(polje);
@@ -477,6 +426,7 @@ public class MainController implements Initializable {
         try {
             int x = getX(p);
             int y = getY(p);
+            synchronized (matrica) {
             Node currentNode = null;
             Node currentNode1 = null;
             ObservableList<Node> childrens = matrica.getChildren();
@@ -487,7 +437,6 @@ public class MainController implements Initializable {
                     currentNode1 = node;
                 }
             }
-            synchronized (lock) {
                 Node finalCurrentNode = currentNode;
                 Node finalCurrentNode1 = currentNode1;
                 if (finalCurrentNode != null) {

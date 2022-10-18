@@ -130,53 +130,84 @@ public class GameService {
         GameService.krajIgre = krajIgre;
     }
 
-    public void igra() throws InterruptedException {
 
-        DuhFigura duhFigura = DuhFigura.getInstance();
-        duhFigura.start();
-        List<Igrac> pomIgraci = new LinkedList<Igrac>(igraci);
-        List<Karta> pomKarta = new LinkedList<Karta>(karte);
-        while (!krajIgre) {
-            trenutnaKarta = pomKarta.remove(0);
-            mainController.prikaziKartu(trenutnaKarta);
-            if (trenutnaKarta instanceof ObicnaKarta) {
-                trenutniIgrac = pomIgraci.remove(0);
-                pomjeraj = ((ObicnaKarta) trenutnaKarta).getPomjeraj();
-                trenutniIgrac.setBrojPomjerajaFigure(pomjeraj);
-                trenutniIgrac.play();
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    log(e);
-                }
-                if (!trenutniIgrac.isIgracZavrsio()) {
-                    pomIgraci.add(trenutniIgrac);
-                }
-                if (pomIgraci.size() < 1) {
-                    krajIgre = true;
-                    break;
-                }
-            } else if (trenutnaKarta instanceof SpecijalnaKarta) {
-                mainController.opisSpecijalneKarte(trenutnaKarta);
-                ((SpecijalnaKarta) trenutnaKarta).postaviRupe();
-            }
-            pomKarta.add(trenutnaKarta);
-        }
-        upisiUFajl();
+    public static List<Igrac> getIgraci() {
+        return igraci;
     }
 
-    public void provjeriKraj() {
-        int br = 0;
-        for (Igrac i : igraci) {
-            if (i.isIgracZavrsio()) {
-                br++;
+    public void setIgraci(List<Igrac> igraci) {
+        this.igraci = igraci;
+    }
+
+    public List<Karta> getKarte() {
+        return karte;
+    }
+
+    public void setKarte(List<Karta> karte) {
+        this.karte = karte;
+    }
+
+    public void igra() {
+        try {
+            DuhFigura duhFigura = DuhFigura.getInstance();
+            duhFigura.start();
+            List<Igrac> pomIgraci = new LinkedList<Igrac>(igraci);
+            List<Karta> pomKarta = new LinkedList<Karta>(karte);
+            while (!krajIgre) {
+                trenutnaKarta = pomKarta.remove(0);
+                mainController.prikaziKartu(trenutnaKarta);
+                if (trenutnaKarta instanceof ObicnaKarta) {
+                    trenutniIgrac = pomIgraci.remove(0);
+                    pomjeraj = ((ObicnaKarta) trenutnaKarta).getPomjeraj();
+                    trenutniIgrac.setBrojPomjerajaFigure(pomjeraj);
+                    trenutniIgrac.play();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log(e);
+                    }
+                    if (!trenutniIgrac.isIgracZavrsio()) {
+                        pomIgraci.add(trenutniIgrac);
+                    }
+                    if (pomIgraci.size() < 1) {
+                        krajIgre = true;
+                        break;
+                    }
+                } else if (trenutnaKarta instanceof SpecijalnaKarta) {
+                    mainController.opisSpecijalneKarte(trenutnaKarta);
+                    ((SpecijalnaKarta) trenutnaKarta).postaviRupe();
+                }
+                pomKarta.add(trenutnaKarta);
             }
+            upisiUFajl();
+
+        } catch (Exception e) {
+            log(e);
         }
-        if (br == igraci.size()) {
-            setKrajIgre(true);
-            System.out.println("Kraj igreeee");
-            // System.out.println("upisan fajl");
+    }
+
+  /*  public void provjeriKraj() {
+        try {
+            int br = 0;
+            for (Igrac i : igraci) {
+                if (i.isIgracZavrsio()) {
+                    br++;
+                }
+            }
+            if (br == igraci.size()) {
+                setKrajIgre(true);
+                System.out.println("Kraj igreeee");
+                // System.out.println("upisan fajl");
+            }
+        } catch (Exception e) {
+            log(e);
         }
+    }
+*/
+
+    public Figura uzmiSlobodnuFiguruPOMOC(Igrac igrac) {
+        return igrac.getFigureIgraca().stream().filter(e -> !e.isFiguraZavrsilaKretanje() && !e.isFiguraPreslaCijeluPutanju()).
+                findFirst().orElse(null);
     }
 
     private String removeLastChar(String s) {
@@ -214,7 +245,7 @@ public class GameService {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                log(e);
             }
             pw.println("Ukupno vrijeme trajanja igre: " + trajanjeIgre + "[s]");
             pw.close();
@@ -223,23 +254,6 @@ public class GameService {
             log(e);
         }
     }
-
-    public static List<Igrac> getIgraci() {
-        return igraci;
-    }
-
-    public void setIgraci(List<Igrac> igraci) {
-        this.igraci = igraci;
-    }
-
-    public List<Karta> getKarte() {
-        return karte;
-    }
-
-    public void setKarte(List<Karta> karte) {
-        this.karte = karte;
-    }
-
 }
 
 

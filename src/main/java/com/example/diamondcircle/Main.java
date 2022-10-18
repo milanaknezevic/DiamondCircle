@@ -2,6 +2,7 @@ package com.example.diamondcircle;
 
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -48,6 +49,7 @@ public class Main extends Application {
 
     public static void log(Throwable e) {
         logger.severe(e.fillInStackTrace().toString());
+        e.printStackTrace();
     }
 
 
@@ -62,6 +64,11 @@ public class Main extends Application {
             stage.setScene(scene);
             stage.setTitle("Unos Parametara");
             stage.setResizable(false);
+            stage.setOnCloseRequest(e->
+            {
+                Platform.exit();
+                System.exit(0);
+            });
             stage.show();
         } catch (Exception e) {
             log(e);

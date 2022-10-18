@@ -160,116 +160,120 @@ public abstract class Figura {
     }
 
     public void runFigura(Igrac current) {
-        synchronized (MainController.lock) {
-            int pom = getBrojPomjeranjaJedneFigure();
-            System.out.println("pom " + pom);
-            pom += getBonusZaNaredniPut();
-            bonusZaNaredniPut = 0;
-            if (this instanceof UbrzanoKretanje) {
-                pom *= 2;
-            }
-            int i = 0;
-            int indexKrajnjegPolja = putanjaFigure.indexOf(trenutnoPolje) + pom;//nalazi broj pomjeraja
-            int br1 = brojPomjerajaFigure(indexKrajnjegPolja);
-            pom += br1;
-            setPoljeSaKojegpocinjeFigura(trenutnoPolje);
-            if (putanjaFigure.indexOf(trenutnoPolje) + pom < 25) {
-                setUkupniPomjeraj(pom);
-                Polje pomic = putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje) + pom);
-                setPoljeNaKojeStajeFigura(pomic);
-            } else {
-                int x = putanjaFigure.indexOf(poslednjePolje) - putanjaFigure.indexOf(trenutnoPolje);
-                setUkupniPomjeraj(x);
-                setPoljeNaKojeStajeFigura(poslednjePolje);
-            }
-            mainController.opisKarte(current, this);
+        try {
+            synchronized (MainController.lock) {
+                int pom = getBrojPomjeranjaJedneFigure();
+                System.out.println("pom " + pom);
+                pom += getBonusZaNaredniPut();
+                bonusZaNaredniPut = 0;
+                if (this instanceof UbrzanoKretanje) {
+                    pom *= 2;
+                }
+                int i = 0;
+                int indexKrajnjegPolja = putanjaFigure.indexOf(trenutnoPolje) + pom;//nalazi broj pomjeraja
+                int br1 = brojPomjerajaFigure(indexKrajnjegPolja);
+                pom += br1;
+                setPoljeSaKojegpocinjeFigura(trenutnoPolje);
+                if (putanjaFigure.indexOf(trenutnoPolje) + pom < 25) {
+                    setUkupniPomjeraj(pom);
+                    Polje pomic = putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje) + pom);
+                    setPoljeNaKojeStajeFigura(pomic);
+                } else {
+                    int x = putanjaFigure.indexOf(poslednjePolje) - putanjaFigure.indexOf(trenutnoPolje);
+                    setUkupniPomjeraj(x);
+                    setPoljeNaKojeStajeFigura(poslednjePolje);
+                }
+                mainController.opisKarte(current, this);
 
-            while (i < pom && !izadji) {
-                synchronized (lock_pause) {
-                    if (pauza) {
+                while (i < pom && !izadji) {
+                    synchronized (lock_pause) {
+                        if (pauza) {
+                            try {
+                                lock_pause.wait();
+                            } catch (InterruptedException e) {
+                                log(e);
+                            }
+                        }
+                    }
+                    if (trenutnoPolje == pocetnoPolje) {
+                        predjenaPolja.add(trenutnoPolje);
+                        putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(this);
+                        putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(true);
+                        if (trenutnoPolje.isImaBonus()) {
+                            bonusZaNaredniPut++;
+                            putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaBonus(false);
+                            MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
+                            mainController.skloniBonus(trenutnoPolje);
+                        }
+                        mainController.postaviFiguruNaPolje(trenutnoPolje, this);
+                        MatricaZaPrikaz.postaviFiguruNaMatricu(trenutnoPolje, this);
+
+                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                        log(e);
+                    }
+                    int index = putanjaFigure.indexOf(trenutnoPolje) + 1;
+                    Polje narednoPolje = trenutnoPolje;
+                    if (index < putanjaFigure.size()) {
+                        narednoPolje = putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje) + 1);
+                    } else {
+                        izadji = true;
+                        this.setFiguraPreslaCijeluPutanju(true);
+                        break;
+
+                    }
+                    if (narednoPolje.isImaFigura() && narednoPolje != poslednjePolje) {
                         try {
-                            lock_pause.wait();
+                            Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             log(e);
                         }
+                        Polje temp = narednoPolje;
+                        while (temp.isImaFigura() && temp != poslednjePolje) {
+                            if (temp.isImaBonus()) {
+                                bonusZaNaredniPut++;
+                                putanjaFigure.get(putanjaFigure.indexOf(temp)).setImaBonus(false);
+                                MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
+                                mainController.skloniBonus(trenutnoPolje);
+                            }
+                            predjenaPolja.add(temp);
+                            temp = putanjaFigure.get(putanjaFigure.indexOf(temp) + 1);
+                            i++;
+
+                        }
+                        narednoPolje = temp;
                     }
-                }
-                if (trenutnoPolje == pocetnoPolje) {
+                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(null);
+                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(false);
+                    mainController.skloniFiguru(trenutnoPolje);
+                    MatricaZaPrikaz.skloniFiguruSaMatrice(trenutnoPolje);
+                    trenutnoPolje = narednoPolje;
                     predjenaPolja.add(trenutnoPolje);
                     putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(this);
-                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(true);
+                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(true);// System.out.print("pom " + pom);
                     if (trenutnoPolje.isImaBonus()) {
                         bonusZaNaredniPut++;
                         putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaBonus(false);
                         MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
-                        mainController.skloniDiamond(trenutnoPolje);
+                        mainController.skloniBonus(trenutnoPolje);
                     }
                     mainController.postaviFiguruNaPolje(trenutnoPolje, this);
                     MatricaZaPrikaz.postaviFiguruNaMatricu(trenutnoPolje, this);
+                    i++;
 
                 }
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception e) {
-                    log(e);
+                if (izadji) {
+                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(null);
+                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(false);
+                    mainController.skloniFiguru(trenutnoPolje);
+                    MatricaZaPrikaz.skloniFiguruSaMatrice(trenutnoPolje);
                 }
-                int index = putanjaFigure.indexOf(trenutnoPolje) + 1;
-                Polje narednoPolje = trenutnoPolje;
-                if (index < putanjaFigure.size()) {
-                    narednoPolje = putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje) + 1);
-                } else {
-                    izadji = true;
-                    this.setFiguraPreslaCijeluPutanju(true);
-                    break;
-
-                }
-                if (narednoPolje.isImaFigura() && narednoPolje != poslednjePolje) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        log(e);
-                    }
-                    Polje temp = narednoPolje;
-                    while (temp.isImaFigura() && temp != poslednjePolje) {
-                        if (temp.isImaBonus()) {
-                            bonusZaNaredniPut++;
-                            putanjaFigure.get(putanjaFigure.indexOf(temp)).setImaBonus(false);
-                            MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
-                            mainController.skloniDiamond(trenutnoPolje);
-                        }
-                        predjenaPolja.add(temp);
-                        temp = putanjaFigure.get(putanjaFigure.indexOf(temp) + 1);
-                        i++;
-
-                    }
-                    narednoPolje = temp;
-                }
-                putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(null);
-                putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(false);
-                mainController.skloniFiguru(trenutnoPolje);
-                MatricaZaPrikaz.skloniFiguruSaMatrice(trenutnoPolje);
-                trenutnoPolje = narednoPolje;
-                predjenaPolja.add(trenutnoPolje);
-                putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(this);
-                putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(true);// System.out.print("pom " + pom);
-                if (trenutnoPolje.isImaBonus()) {
-                    bonusZaNaredniPut++;
-                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaBonus(false);
-                    MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
-                    mainController.skloniDiamond(trenutnoPolje);
-                }
-                mainController.postaviFiguruNaPolje(trenutnoPolje, this);
-                MatricaZaPrikaz.postaviFiguruNaMatricu(trenutnoPolje, this);
-                i++;
 
             }
-            if (izadji) {
-                putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(null);
-                putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(false);
-                mainController.skloniFiguru(trenutnoPolje);
-                MatricaZaPrikaz.skloniFiguruSaMatrice(trenutnoPolje);
-            }
+        } catch (Exception e) {
+            log(e);
         }
-
     }
 }

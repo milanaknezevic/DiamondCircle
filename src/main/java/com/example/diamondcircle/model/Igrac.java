@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import static com.example.diamondcircle.Main.log;
+
 public class Igrac {
     private String ime;
     private List<Figura> figureIgraca = new ArrayList<Figura>();
@@ -128,28 +130,35 @@ public class Igrac {
     }
 
     public void play() {
+        try {
+            Figura slobodnaFigura = uzmiSlobodnuFiguru(this);
+            if (slobodnaFigura != null) {
+                trenutnaFigura = slobodnaFigura;
+                trenutnaFigura.setBrojPomjeranjaJedneFigure(brojPomjerajaFigure);
+                System.out.println("Naziv Figure " + trenutnaFigura.getIme());
+                System.out.println("boja " + trenutnaFigura.getBoja());
+                System.out.println("pomjeraj Figure " + trenutnaFigura.getBrojPomjeranjaJedneFigure());
+                //mainController.opisKarte(this,trenutnaFigura);
+                trenutnaFigura.runFigura(this);
+                Thread.sleep(100);
+                if (igracZavrsioKretanje(this)) {
+                    this.setIgracZavrsio(true);
+                }
+            } else {
+                System.out.println("Igrac " + this.getIme() + " nema vise figura");
+                this.setIgracZavrsio(true);
+            }
 
+        } catch (Exception e) {
+            log(e);
+        }
+    }
+
+    public boolean igracZavrsioKretanje(Igrac igrac) {
         Figura temp = uzmiSlobodnuFiguru(this);
         if (temp != null) {
-            trenutnaFigura = temp;
-            trenutnaFigura.setBrojPomjeranjaJedneFigure(brojPomjerajaFigure);
-            System.out.println("Naziv Figure " + trenutnaFigura.getIme());
-            System.out.println("boja " + trenutnaFigura.getBoja());
-            System.out.println("pomjeraj Figure " + trenutnaFigura.getBrojPomjeranjaJedneFigure());
-            //mainController.opisKarte(this,trenutnaFigura);
-            trenutnaFigura.runFigura(this);
-            //nakon sto se pojede poslednja figura iyvuce mi jos karata pa tek onda kao bude kraj igre :(
-           /* Figura pom=uzmiSlobodnuFiguru(this);
-            if(pom == null)
-            {
-                this.setIgracZavrsio(true);
-            }*/
-
-        } else {
-            System.out.println("Igrac " + this.getIme() + " nema vise figura");
-            this.setIgracZavrsio(true);
-        }
-
+            return false;
+        } else return true;
 
     }
 }
