@@ -58,7 +58,7 @@ public class UnesiParametre implements Initializable {
         stage.setResizable(false);
         scene = new Scene(root);
         stage.setScene(scene);
-        if ((dimenzija < 7 || dimenzija > 10) || (brojIgraca < 2 || brojIgraca > 4)) {
+       /* if ((dimenzija < 7 || dimenzija > 10) || (brojIgraca < 2 || brojIgraca > 4)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Neispavan unos!");
             alert.showAndWait().ifPresent(rs -> {
@@ -69,7 +69,8 @@ public class UnesiParametre implements Initializable {
             System.exit(0);
         } else {
             stage.show();
-        }
+        }*/
+        stage.show();
 
 
     }

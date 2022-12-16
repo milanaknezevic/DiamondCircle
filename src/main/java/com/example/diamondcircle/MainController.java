@@ -50,10 +50,10 @@ public class MainController implements Initializable {
 
     public static MainController mainController;
 
-    public static int row1;
-    public static int col1;
-    private int a1 = 10;//za obim rupe/bonusa
-    private int a2 = 10;
+    public  int row1;
+    public  int col1;
+    public  int a1 = 10;//za obim rupe/bonusa
+    public  int a2 = 10;
     private static int matricaNacrtana = 0;
     public static GameService game_service;
     public static StringBuilder builder = new StringBuilder();
@@ -111,7 +111,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        mainController = this;
         setBrojOdigranihIgara(brojIgara);
         if (matricaNacrtana == 0) {
             nacrtajMatricu();
@@ -127,7 +127,7 @@ public class MainController implements Initializable {
         }
 
         // Kako sortirati :(
-       // Collections.sort(figureIgracaList);
+        // Collections.sort(figureIgracaList);
         listaFiguraIgraca.getItems().addAll(figureIgracaList);
         listaFiguraIgraca.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -140,80 +140,80 @@ public class MainController implements Initializable {
     }
 
     public void setIgrace() {
-try{
-        for (int j = 0; j < brojIgraca; j++) {
-            int boja = getIgraci().get(j).getBojaIgraca();
-            if (boja == 0)//crvena
-            {
-                Label label = new Label(getIgraci().get(j).getIme() + "    ");
-                label.setTextFill(Color.RED);
-                label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label, j, 0);
-            } else if (boja == 1)//zelena
-            {
-                Label label = new Label(getIgraci().get(j).getIme() + "    ");
-                label.setTextFill(Color.GREEN);
-                label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label, j, 0);
-            } else if (boja == 2)//plava
-            {
-                Label label = new Label(getIgraci().get(j).getIme() + "    ");
-                label.setTextFill(Color.BLUE);
-                label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label, j, 0);
-            } else//zuta
-            {
-                Label label = new Label(getIgraci().get(j).getIme() + "    ");
-                label.setTextFill(Color.YELLOW);
-                label.setStyle("-fx-font-size: 16");
-                igraciNabrojani.add(label, j, 0);
-            }
+        try {
+            for (int j = 0; j < brojIgraca; j++) {
+                int boja = getIgraci().get(j).getBojaIgraca();
+                if (boja == 0)//crvena
+                {
+                    Label label = new Label(getIgraci().get(j).getIme() + "    ");
+                    label.setTextFill(Color.RED);
+                    label.setStyle("-fx-font-size: 16");
+                    igraciNabrojani.add(label, j, 0);
+                } else if (boja == 1)//zelena
+                {
+                    Label label = new Label(getIgraci().get(j).getIme() + "    ");
+                    label.setTextFill(Color.GREEN);
+                    label.setStyle("-fx-font-size: 16");
+                    igraciNabrojani.add(label, j, 0);
+                } else if (boja == 2)//plava
+                {
+                    Label label = new Label(getIgraci().get(j).getIme() + "    ");
+                    label.setTextFill(Color.BLUE);
+                    label.setStyle("-fx-font-size: 16");
+                    igraciNabrojani.add(label, j, 0);
+                } else//zuta
+                {
+                    Label label = new Label(getIgraci().get(j).getIme() + "    ");
+                    label.setTextFill(Color.YELLOW);
+                    label.setStyle("-fx-font-size: 16");
+                    igraciNabrojani.add(label, j, 0);
+                }
 
+            }
+        } catch (Exception e) {
+            log(e);
         }
-    } catch (Exception e) {
-        log(e);
-    }
 
     }
 
     public void pokreni(ActionEvent actionEvent) {
-        try{
-        if (brojac == 0) {
-            new Thread(() -> {
-                try {
-                    sleep(1000);
-                } catch (InterruptedException e) {
-                    log(e);
-                }
-                game_service.igra();
-            }).start();
-            new Thread(() -> {
-                mjerenjeVremena();
-                // measureGameDuration();
-            }).start();
-            new Thread(() ->
-            {
-                while (!krajIgre) {
+        try {
+            if (brojac == 0) {
+                new Thread(() -> {
                     try {
                         sleep(1000);
-                        MatricaZaPrikaz.printMatrica();
-                    } catch (Exception e) {
+                    } catch (InterruptedException e) {
                         log(e);
                     }
+                    game_service.igra();
+                }).start();
+                new Thread(() -> {
+                    mjerenjeVremena();
+                    // measureGameDuration();
+                }).start();
+                new Thread(() ->
+                {
+                    while (!krajIgre) {
+                        try {
+                            sleep(1000);
+                            MatricaZaPrikaz.printMatrica();
+                        } catch (Exception e) {
+                            log(e);
+                        }
+                    }
+                }
+
+                ).start();
+                brojac++;
+            }
+            start.setVisible(false);
+            pause.setVisible(true);
+            game_service.setPauza(false);
+            synchronized (lock_pause) {
+                if (!pauza) {
+                    lock_pause.notifyAll();
                 }
             }
-
-            ).start();
-            brojac++;
-        }
-        start.setVisible(false);
-        pause.setVisible(true);
-        game_service.setPauza(false);
-        synchronized (lock_pause) {
-            if (!pauza) {
-                lock_pause.notifyAll();
-            }
-        }
 
         } catch (Exception e) {
             log(e);
@@ -221,15 +221,15 @@ try{
     }
 
     public void pauzirajSimulaciju(ActionEvent actionEvent) {
-try{
-        System.out.println("Pauza");
-        pause.setVisible(false);
-        start.setVisible(true);
-        game_service.setPauza(true);
+        try {
+            System.out.println("Pauza");
+            pause.setVisible(false);
+            start.setVisible(true);
+            game_service.setPauza(true);
 
-} catch (Exception e) {
-    log(e);
-}
+        } catch (Exception e) {
+            log(e);
+        }
     }
 
     public void prikaziKartu(Karta karta) {
@@ -259,8 +259,13 @@ try{
         try {
             int x = getX(p1);
             int y = getY(p1);
+           /* Platform.runLater(()->
+            {
+                ((Label)matrica[y][x].getChildren().get(0)).setGraphic(null);
+            });
+            */
             synchronized (matrica) {
-                CopyOnWriteArrayList<Node> childrens = new CopyOnWriteArrayList<>( matrica.getChildren());
+                CopyOnWriteArrayList<Node> childrens = new CopyOnWriteArrayList<>(matrica.getChildren());
                 Node currentNode = null;
 
                 for (Node node : childrens) {
@@ -286,12 +291,12 @@ try{
                 }
             }
         } catch (Exception e) {
-            //log(e);
-            e.printStackTrace();
+            log(e);
+           // e.printStackTrace();
         }
     }
 
-    public void skloniDiamondslikadijamanta(Polje p1) {
+   /* public void skloniDiamondslikadijamanta(Polje p1) {
         try {
             int x = getX(p1);
             int y = getY(p1);
@@ -311,9 +316,9 @@ try{
         } catch (Exception e) {
             log(e);
         }
-    }
+    }*/
 
-    public void postaviDiamondslikadijamnat(Polje p1) {
+   /* public void postaviDiamondslikadijamnat(Polje p1) {
         int x = getX(p1);
         int y = getY(p1);
         FileInputStream imageStream = null;
@@ -327,7 +332,7 @@ try{
         Platform.runLater(() -> matrica.add(new ImageView(image), x, y));
 
 
-    }
+    }*/
 
     @FXML
     public void skloniCrneRupe(Polje p1) {
@@ -427,16 +432,16 @@ try{
             int x = getX(p);
             int y = getY(p);
             synchronized (matrica) {
-            Node currentNode = null;
-            Node currentNode1 = null;
-            ObservableList<Node> childrens = matrica.getChildren();
-            for (Node node : childrens) {
-                if (node instanceof Rectangle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode = node;
-                } else if (node instanceof Label && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
-                    currentNode1 = node;
+                Node currentNode = null;
+                Node currentNode1 = null;
+                ObservableList<Node> childrens = matrica.getChildren();
+                for (Node node : childrens) {
+                    if (node instanceof Rectangle && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
+                        currentNode = node;
+                    } else if (node instanceof Label && matrica.getRowIndex(node) == x && matrica.getColumnIndex(node) == y) {
+                        currentNode1 = node;
+                    }
                 }
-            }
                 Node finalCurrentNode = currentNode;
                 Node finalCurrentNode1 = currentNode1;
                 if (finalCurrentNode != null) {
@@ -462,7 +467,7 @@ try{
         return (pozicija - 1) % dimenzija;
     }
 
-    public void setDimension() {
+   /* public void setDimension() {
         try {
 
             if (dimenzija == 7) {
@@ -490,13 +495,13 @@ try{
             log(e);
         }
 
-    }
+    }*/
 
     public void nacrtajMatricu() {
         try {
             game_service = new GameService();//game_service = GameService.getInstance();
-            mainController = this;
-            setDimension();
+            //mainController = this;
+            //setDimension();
             int vel = dimenzija * dimenzija;
 
             for (int i = 0; i < dimenzija; i++) {

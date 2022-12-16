@@ -1162,3 +1162,195 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-16T12:14:40.353951Z</date>
+  <millis>1671192880353</millis>
+  <nanos>951000</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>java.lang.NullPointerException: Cannot assign field "row1" because "com.example.diamondcircle.MainController.mainController" is null</message>
+</record>
+<record>
+  <date>2022-12-16T12:14:40.394840500Z</date>
+  <millis>1671192880394</millis>
+  <nanos>840500</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>java.lang.IndexOutOfBoundsException: Index: 0, Size: 0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-16T12:16:16.551033Z</date>
+  <millis>1671192976551</millis>
+  <nanos>33000</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2</message>
+</record>
+<record>
+  <date>2022-12-16T12:16:16.572277400Z</date>
+  <millis>1671192976572</millis>
+  <nanos>277400</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>java.lang.IndexOutOfBoundsException: Index: 0, Size: 0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-16T12:19:13.048363400Z</date>
+  <millis>1671193153048</millis>
+  <nanos>363400</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>java.lang.NullPointerException: Cannot assign field "row1" because "com.example.diamondcircle.MainController.mainController" is null</message>
+</record>
+<record>
+  <date>2022-12-16T12:19:13.096235Z</date>
+  <millis>1671193153096</millis>
+  <nanos>235000</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>java.lang.IndexOutOfBoundsException: Index: 0, Size: 0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-16T12:24:45.100520Z</date>
+  <millis>1671193485100</millis>
+  <nanos>520000</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-12-16T12:24:50.517291100Z</date>
+  <millis>1671193490517</millis>
+  <nanos>291100</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-16T12:27:50.713932400Z</date>
+  <millis>1671193670713</millis>
+  <nanos>932400</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-16T12:28:15.284752800Z</date>
+  <millis>1671193695284</millis>
+  <nanos>752800</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+<record>
+  <date>2022-12-16T12:28:15.362562700Z</date>
+  <millis>1671193695362</millis>
+  <nanos>562700</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>SEVERE</level>
+  <class>com.example.diamondcircle.Main</class>
+  <method>log</method>
+  <thread>28</thread>
+  <message>java.util.ConcurrentModificationException</message>
+</record>
+</log>

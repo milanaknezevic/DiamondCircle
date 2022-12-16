@@ -1,5 +1,6 @@
 package com.example.diamondcircle.model;
 
+import static com.example.diamondcircle.MainController.mainController;
 import com.example.diamondcircle.model.mapa.Element;
 import com.example.diamondcircle.model.mapa.Polje;
 
@@ -11,12 +12,13 @@ import java.nio.file.Path;
 import java.util.*;
 
 import static com.example.diamondcircle.Main.log;
-import static com.example.diamondcircle.MainController.mainController;
+
 
 
 public class GameService {
 
     public static int dimenzija;
+
     public static int brojIgraca;
     public static boolean krajIgre = false;
     public static Object lock_pause = new Object();
@@ -75,13 +77,18 @@ public class GameService {
         try {
 
 
-            String line = Files.readString(path);
+            List<String> line = Files.readAllLines(path);
             System.out.println(line);
-            List<String> stringList = Arrays.asList(line.split("#"));
+            List<String> stringList = Arrays.asList(line.get(0).split("#"));
             for (String s : stringList) {
                 int x = Integer.parseInt(s);
                 putanjaFigure.add(new Polje(new Element(x)));
             }
+            String[] parts=line.get(1).split("#");
+            mainController.row1=Integer.parseInt(parts[0]);
+            mainController.col1=Integer.parseInt(parts[0]);
+            mainController.a1=Integer.parseInt(parts[1]);
+            mainController.a2=Integer.parseInt(parts[1]);
         } catch (IOException e) {
             log(e);
         }

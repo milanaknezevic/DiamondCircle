@@ -45,7 +45,7 @@ public abstract class Figura {
     private static int id = 1;
     private int ukupniPomjeraj;
     private int brojPomjeranjaJedneFigure;
-
+private int velicinaPutanje;
     public Figura(int broj) {
         this.ime = "Figura" + id;
         if (broj == 0) {
@@ -60,6 +60,7 @@ public abstract class Figura {
         trenutnoPolje = putanjaFigure.get(0);
         pocetnoPolje = trenutnoPolje;
         poslednjePolje = putanjaFigure.get(putanjaFigure.size() - 1);//ako je 7.txt treba biti 24
+        velicinaPutanje=putanjaFigure.size();
         id++;
     }
 
@@ -174,7 +175,7 @@ public abstract class Figura {
                 int br1 = brojPomjerajaFigure(indexKrajnjegPolja);
                 pom += br1;
                 setPoljeSaKojegpocinjeFigura(trenutnoPolje);
-                if (putanjaFigure.indexOf(trenutnoPolje) + pom < 25) {
+                if (putanjaFigure.indexOf(trenutnoPolje) + pom < velicinaPutanje) {
                     setUkupniPomjeraj(pom);
                     Polje pomic = putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje) + pom);
                     setPoljeNaKojeStajeFigura(pomic);

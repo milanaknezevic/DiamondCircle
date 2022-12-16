@@ -5,7 +5,6 @@ import com.example.diamondcircle.model.Figura;
 import com.example.diamondcircle.model.mapa.Polje;
 
 import static com.example.diamondcircle.model.GameService.dimenzija;
-import static com.example.diamondcircle.model.GameService.velicina;
 
 public class MatricaZaPrikaz {
     public static final String ANSI_RESET = "\u001B[0m";

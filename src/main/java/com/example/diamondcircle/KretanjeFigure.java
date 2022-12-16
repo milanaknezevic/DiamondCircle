@@ -17,6 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static com.example.diamondcircle.Main.log;
+import static com.example.diamondcircle.Main.main;
 import static com.example.diamondcircle.MainController.*;
 import static com.example.diamondcircle.model.GameService.dimenzija;
 import static com.example.diamondcircle.model.GameService.matrica;
@@ -27,7 +28,7 @@ public class KretanjeFigure implements Initializable {
     public static GameService game_service;
     public static KretanjeFigure kretanjeFigure;
 
-    public void setDimension() {
+   /* public void setDimension() {
         if (dimenzija == 7) {
             row1 = 45;
             col1 = 45;
@@ -42,20 +43,20 @@ public class KretanjeFigure implements Initializable {
             col1 = 30;
         }
 
-    }
+    }*/
 
     public void nacrtajMatricuKretanjaFigure() {
-        setDimension();
+      //  setDimension();
         for (int i = 0; i < dimenzija; i++) {
             ColumnConstraints col = new ColumnConstraints();
-            col.setMinWidth(col1);
-            col.setPrefWidth(col1);
+            col.setMinWidth(mainController.col1);
+            col.setPrefWidth(mainController.col1);
             figurePane.getColumnConstraints().add(col);
         }
         for (int i = 0; i < dimenzija; i++) {
             RowConstraints row = new RowConstraints();
-            row.setMinHeight(row1);
-            row.setPrefHeight(row1);
+            row.setMinHeight(mainController.row1);
+            row.setPrefHeight(mainController.row1);
             figurePane.getRowConstraints().add(row);
         }
         int content = 1;
@@ -83,7 +84,7 @@ public class KretanjeFigure implements Initializable {
                 int pozicija = p.getElement().getX();
                 int y = (pozicija - 1) % dimenzija;
                 int x = (pozicija - 1) / dimenzija;
-                Rectangle rectangle = new Rectangle(row1, col1);
+                Rectangle rectangle = new Rectangle(mainController.row1, mainController.col1);
                 Boja boja = figura.getBoja();
                 setBoja(rectangle, boja);
                 Platform.runLater(() ->

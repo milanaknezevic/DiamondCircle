@@ -49,7 +49,7 @@ public class Main extends Application {
 
     public static void log(Throwable e) {
         logger.severe(e.fillInStackTrace().toString());
-        e.printStackTrace();
+        //e.printStackTrace();
     }
 
 
