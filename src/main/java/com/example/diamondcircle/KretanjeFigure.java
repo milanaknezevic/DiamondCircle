@@ -5,22 +5,20 @@ import com.example.diamondcircle.model.Figura;
 import com.example.diamondcircle.model.GameService;
 import com.example.diamondcircle.model.mapa.Polje;
 import javafx.application.Platform;
+import javafx.fxml.Initializable;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import static com.example.diamondcircle.Main.log;
-import static com.example.diamondcircle.Main.main;
-import static com.example.diamondcircle.MainController.*;
+import static com.example.diamondcircle.MainController.mainController;
 import static com.example.diamondcircle.model.GameService.dimenzija;
-import static com.example.diamondcircle.model.GameService.matrica;
 
 public class KretanjeFigure implements Initializable {
     public GridPane figurePane = new GridPane();
@@ -28,22 +26,6 @@ public class KretanjeFigure implements Initializable {
     public static GameService game_service;
     public static KretanjeFigure kretanjeFigure;
 
-   /* public void setDimension() {
-        if (dimenzija == 7) {
-            row1 = 45;
-            col1 = 45;
-        } else if (dimenzija == 8) {
-            row1 = 40;
-            col1 = 40;
-        } else if (dimenzija == 9) {
-            row1 = 35;
-            col1 = 35;
-        } else if (dimenzija == 10) {
-            row1 = 30;
-            col1 = 30;
-        }
-
-    }*/
 
     public void nacrtajMatricuKretanjaFigure() {
       //  setDimension();

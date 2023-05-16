@@ -9,6 +9,7 @@ import static com.example.diamondcircle.Main.log;
 
 public class Igrac {
     private String ime;
+    private static final Integer brFigura=4;
     private List<Figura> figureIgraca = new ArrayList<Figura>();
     private int bojaIgraca;
     Random rand = new Random();
@@ -37,7 +38,7 @@ public class Igrac {
         }
         //igrac dobija 4 random figure
 
-        while (this.figureIgraca.size() < 4)//ide manje od 4
+        while (this.figureIgraca.size() < brFigura)//ide manje od 4
         {
             int x = rand.nextInt(3);
 
@@ -135,17 +136,12 @@ public class Igrac {
             if (slobodnaFigura != null) {
                 trenutnaFigura = slobodnaFigura;
                 trenutnaFigura.setBrojPomjeranjaJedneFigure(brojPomjerajaFigure);
-                System.out.println("Naziv Figure " + trenutnaFigura.getIme());
-                System.out.println("boja " + trenutnaFigura.getBoja());
-                System.out.println("pomjeraj Figure " + trenutnaFigura.getBrojPomjeranjaJedneFigure());
-                //mainController.opisKarte(this,trenutnaFigura);
                 trenutnaFigura.runFigura(this);
                 Thread.sleep(100);
                 if (igracZavrsioKretanje(this)) {
                     this.setIgracZavrsio(true);
                 }
             } else {
-                System.out.println("Igrac " + this.getIme() + " nema vise figura");
                 this.setIgracZavrsio(true);
             }
 

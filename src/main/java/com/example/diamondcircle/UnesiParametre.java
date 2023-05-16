@@ -9,8 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
@@ -48,10 +46,6 @@ public class UnesiParametre implements Initializable {
 
         dimenzija = choiceBox1.getSelectionModel().getSelectedItem();//System.out.print(selectedDimenzija);
         brojIgraca = choiceBox2.getSelectionModel().getSelectedItem();//System.out.print(selectedBrojIgraca);
-        MatricaZaPrikaz mzp = new MatricaZaPrikaz();
-        for (int i = 0; i < dimenzija * dimenzija; i++) {
-            mzp.matricaPOM[i] = new MatricaZaPrikaz();
-        }
         Parent root = FXMLLoader.load(getClass().getResource("Igra.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Igra");

@@ -41,7 +41,7 @@ public class Rezultati implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 StringBuilder resultStringBuilder = new StringBuilder();
                 currentFile = fileList.getSelectionModel().getSelectedItem();
-                // System.out.println("current file " + currentFile);
+
                 File file = new File("src" + File.separator + "main" + File.separator + "java" + File.separator +
                         "com" + File.separator + "example" + File.separator + "diamondcircle" + File.separator + "rezultatiIgre" + File.separator + currentFile);
                 try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -50,8 +50,6 @@ public class Rezultati implements Initializable {
                         resultStringBuilder.append(line).append("\n");
                     }
                     sadrzajFajla.setText(resultStringBuilder.toString());
-                    //  sadrzajFajla.setFont(Font.font("San serif",12));
-                    // sadrzajFajla.setEditable(false);
                 } catch (IOException e) {
                     log(e);
                 }

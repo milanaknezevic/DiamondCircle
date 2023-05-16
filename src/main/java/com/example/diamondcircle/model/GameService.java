@@ -193,25 +193,6 @@ public class GameService {
         }
     }
 
-  /*  public void provjeriKraj() {
-        try {
-            int br = 0;
-            for (Igrac i : igraci) {
-                if (i.isIgracZavrsio()) {
-                    br++;
-                }
-            }
-            if (br == igraci.size()) {
-                setKrajIgre(true);
-                System.out.println("Kraj igreeee");
-                // System.out.println("upisan fajl");
-            }
-        } catch (Exception e) {
-            log(e);
-        }
-    }
-*/
-
     public Figura uzmiSlobodnuFiguruPOMOC(Igrac igrac) {
         return igrac.getFigureIgraca().stream().filter(e -> !e.isFiguraZavrsilaKretanje() && !e.isFiguraPreslaCijeluPutanju()).
                 findFirst().orElse(null);
@@ -230,7 +211,7 @@ public class GameService {
             PrintWriter pw = new PrintWriter(fileName);
             int id = 1;
             for (int i = 0; i < igraci.size(); i++) {
-                String igrac = "Igra " + id;
+                String igrac = "Igrac " + id;
                 id++;
                 pw.println(igrac + " - " + igraci.get(i).getIme());
                 for (Figura figura : igraci.get(i).getFigureIgraca()) {
@@ -248,7 +229,6 @@ public class GameService {
                 pw.println();
             }
             pw.println();
-            System.out.println("Ukupno vrijeme trajanja igre: " + trajanjeIgre + "[s]");
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

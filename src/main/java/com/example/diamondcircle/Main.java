@@ -4,14 +4,12 @@ package com.example.diamondcircle;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.FileHandler;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Main extends Application {
@@ -27,16 +25,10 @@ public class Main extends Application {
     static {
         try {
             String file_name = "src" + File.separator + "main" + File.separator + "java" + File.separator + "com" + File.separator + "example" + File.separator + "diamondcircle" + File.separator + "myLogger" + File.separator + "myLogs.log";
-            File f = new File(file_name);
-            if (!f.exists()) {
+            fileHandler = new FileHandler(file_name, true);
+            logger.addHandler(fileHandler);
+            logger.getLogger(Main.class.getName()).setUseParentHandlers(false);
 
-                f.createNewFile();
-
-            } else {
-                fileHandler = new FileHandler(file_name, true);
-                logger.addHandler(fileHandler);
-                logger.getLogger(Main.class.getName()).setUseParentHandlers(false);
-            }
 
         } catch (IOException e) {
             logger.severe(e.fillInStackTrace().toString());
@@ -57,14 +49,12 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
 
         try {
-            // Parent root = FXMLLoader.load(getClass().getResource("UnosParametara.fxml"));
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("UnosParametara.fxml"));
-            // Scene scene = new Scene(root);
             Scene scene = new Scene(fxmlLoader.load(), 600, 378);
             stage.setScene(scene);
             stage.setTitle("Unos Parametara");
             stage.setResizable(false);
-            stage.setOnCloseRequest(e->
+            stage.setOnCloseRequest(e ->
             {
                 Platform.exit();
                 System.exit(0);

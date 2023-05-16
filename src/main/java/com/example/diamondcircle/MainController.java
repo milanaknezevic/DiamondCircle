@@ -121,7 +121,6 @@ public class MainController implements Initializable {
         List<String> figureIgracaList = new ArrayList<>();
         for (int j = 0; j < brojIgraca; j++) {
             for (int k = 0; k < getIgraci().get(0).getFigureIgraca().size(); k++) {
-                System.out.println(getIgraci().get(j).getFigureIgraca().get(k).getIme());
                 figureIgracaList.add(getIgraci().get(j).getFigureIgraca().get(k).getIme());
             }
         }
@@ -133,7 +132,6 @@ public class MainController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 nazivFigureZaPrikazKretanja = listaFiguraIgraca.getSelectionModel().getSelectedItem();
-                System.out.println("selected item " + nazivFigureZaPrikazKretanja);
             }
         });
 
@@ -191,19 +189,6 @@ public class MainController implements Initializable {
                     mjerenjeVremena();
                     // measureGameDuration();
                 }).start();
-                new Thread(() ->
-                {
-                    while (!krajIgre) {
-                        try {
-                            sleep(1000);
-                            MatricaZaPrikaz.printMatrica();
-                        } catch (Exception e) {
-                            log(e);
-                        }
-                    }
-                }
-
-                ).start();
                 brojac++;
             }
             start.setVisible(false);
@@ -222,7 +207,6 @@ public class MainController implements Initializable {
 
     public void pauzirajSimulaciju(ActionEvent actionEvent) {
         try {
-            System.out.println("Pauza");
             pause.setVisible(false);
             start.setVisible(true);
             game_service.setPauza(true);
@@ -259,11 +243,6 @@ public class MainController implements Initializable {
         try {
             int x = getX(p1);
             int y = getY(p1);
-           /* Platform.runLater(()->
-            {
-                ((Label)matrica[y][x].getChildren().get(0)).setGraphic(null);
-            });
-            */
             synchronized (matrica) {
                 CopyOnWriteArrayList<Node> childrens = new CopyOnWriteArrayList<>(matrica.getChildren());
                 Node currentNode = null;
@@ -547,7 +526,7 @@ public class MainController implements Initializable {
                     }
                     broj++;
                 } else {
-                    System.out.print("");
+
                 }
             }
         } catch (Exception e) {
@@ -555,36 +534,6 @@ public class MainController implements Initializable {
         }
     }
 
-
-   /* public void measureGameDuration() {
-     //   return new Thread(() -> {
-            int h = 0, m = 0, s = 0;
-            while (!krajIgre) {
-                if (!pauza) {
-                    String time = String.format("%d h %d m %d s", h, m, s);
-                   // gameService.setElapsedTime(time);
-                    Platform.runLater(() -> LabelaZaVrijemeTrajanjaIgre.setText(time));
-
-                    try {
-                        Thread.sleep(1000);
-                    } catch (Exception e) {
-                        log(e);
-                    }
-                    s++;
-                    if (s >= 60) {
-                        m++;
-                        s %= 60;
-                    }
-                    if (m >= 60) {
-                        h++;
-                        m %= 60;
-                    }
-                }
-            }
-            System.out.printf("Game OVER Total time: %d h %d m %d s%n", h, m, s);
-            //gameService.setElapsedTime(String.format("%d h %d m %d s", h, m, s));
-        }
-*/
 
     public void setBrojOdigranihIgara(Label brojIgaraLabel) {
         try {
@@ -598,7 +547,6 @@ public class MainController implements Initializable {
                     fileCounter++;
                 }
             }
-            System.out.println("broj fajlova " + fileCounter);
             brojIgaraLabel.setText("Trenutni broj odigranih igara: " + fileCounter);
         } catch (Exception e) {
             log(e);
@@ -693,7 +641,7 @@ public class MainController implements Initializable {
             if (pom != null) {
                 kretanjeFigure.prikaziKretanjeFigure(pom);
             } else {
-                System.out.printf("nzm, ubij seee");
+
             }
 
         } catch (Exception e) {

@@ -1,7 +1,6 @@
 package com.example.diamondcircle.model;
 
 import com.example.diamondcircle.MainController;
-import com.example.diamondcircle.MatricaZaPrikaz;
 import com.example.diamondcircle.model.mapa.Polje;
 
 import java.util.*;
@@ -44,7 +43,6 @@ public class SpecijalnaKarta extends Karta {
                     x.setImaRupa(true);
                     poljaNaKomSuRupe.add(x);
                     mainController.postaviCrneRupe(x);
-                    MatricaZaPrikaz.postaviCrneRupeNaMatricu(x);
                     i++;
 
                     if (x.isImaFigura() && !(x.getFigura() instanceof LebdecaFigura)) {
@@ -57,13 +55,12 @@ public class SpecijalnaKarta extends Karta {
                         int a = x.getElement().getX();
                         x.setImaFigura(false);
                         x.setFigura(null);
-                        MatricaZaPrikaz.skloniFiguruSaMatrice(x);
                         mainController.skloniFiguru(x);
                     }
                 }
             }
 
-            //}
+
 
             try {
                 sleep(1000);
@@ -77,7 +74,6 @@ public class SpecijalnaKarta extends Karta {
                     int index = putanjaFigure.indexOf(p);
                     putanjaFigure.get(index).setImaRupa(false);
                     mainController.skloniCrneRupe(p);
-                    MatricaZaPrikaz.skloniCrneRupeSaMatrice(p);
                     try {
                         sleep(10);
                     } catch (InterruptedException e) {

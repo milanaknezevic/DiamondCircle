@@ -1,7 +1,6 @@
 package com.example.diamondcircle.model;
 
 import com.example.diamondcircle.MainController;
-import com.example.diamondcircle.MatricaZaPrikaz;
 import com.example.diamondcircle.model.mapa.Polje;
 
 import java.util.ArrayList;
@@ -45,7 +44,8 @@ public abstract class Figura {
     private static int id = 1;
     private int ukupniPomjeraj;
     private int brojPomjeranjaJedneFigure;
-private int velicinaPutanje;
+    private int velicinaPutanje;
+
     public Figura(int broj) {
         this.ime = "Figura" + id;
         if (broj == 0) {
@@ -60,7 +60,7 @@ private int velicinaPutanje;
         trenutnoPolje = putanjaFigure.get(0);
         pocetnoPolje = trenutnoPolje;
         poslednjePolje = putanjaFigure.get(putanjaFigure.size() - 1);//ako je 7.txt treba biti 24
-        velicinaPutanje=putanjaFigure.size();
+        velicinaPutanje = putanjaFigure.size();
         id++;
     }
 
@@ -164,7 +164,6 @@ private int velicinaPutanje;
         try {
             synchronized (MainController.lock) {
                 int pom = getBrojPomjeranjaJedneFigure();
-                System.out.println("pom " + pom);
                 pom += getBonusZaNaredniPut();
                 bonusZaNaredniPut = 0;
                 if (this instanceof UbrzanoKretanje) {
@@ -203,11 +202,9 @@ private int velicinaPutanje;
                         if (trenutnoPolje.isImaBonus()) {
                             bonusZaNaredniPut++;
                             putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaBonus(false);
-                            MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
                             mainController.skloniBonus(trenutnoPolje);
                         }
                         mainController.postaviFiguruNaPolje(trenutnoPolje, this);
-                        MatricaZaPrikaz.postaviFiguruNaMatricu(trenutnoPolje, this);
 
                     }
                     try {
@@ -236,7 +233,6 @@ private int velicinaPutanje;
                             if (temp.isImaBonus()) {
                                 bonusZaNaredniPut++;
                                 putanjaFigure.get(putanjaFigure.indexOf(temp)).setImaBonus(false);
-                                MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
                                 mainController.skloniBonus(trenutnoPolje);
                             }
                             predjenaPolja.add(temp);
@@ -249,19 +245,16 @@ private int velicinaPutanje;
                     putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(null);
                     putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(false);
                     mainController.skloniFiguru(trenutnoPolje);
-                    MatricaZaPrikaz.skloniFiguruSaMatrice(trenutnoPolje);
                     trenutnoPolje = narednoPolje;
                     predjenaPolja.add(trenutnoPolje);
                     putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(this);
-                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(true);// System.out.print("pom " + pom);
+                    putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(true);
                     if (trenutnoPolje.isImaBonus()) {
                         bonusZaNaredniPut++;
                         putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaBonus(false);
-                        MatricaZaPrikaz.skloniBonusSaMatrice(trenutnoPolje);
                         mainController.skloniBonus(trenutnoPolje);
                     }
                     mainController.postaviFiguruNaPolje(trenutnoPolje, this);
-                    MatricaZaPrikaz.postaviFiguruNaMatricu(trenutnoPolje, this);
                     i++;
 
                 }
@@ -269,7 +262,6 @@ private int velicinaPutanje;
                     putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setFigura(null);
                     putanjaFigure.get(putanjaFigure.indexOf(trenutnoPolje)).setImaFigura(false);
                     mainController.skloniFiguru(trenutnoPolje);
-                    MatricaZaPrikaz.skloniFiguruSaMatrice(trenutnoPolje);
                 }
 
             }
